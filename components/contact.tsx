@@ -35,7 +35,7 @@ export default function Contact() {
   }
 
   const defaultContactInfo = [
-    { icon: Phone, title: 'Telepon / WhatsApp', lines: contactInfo?.phones || ['0813-9078-8045'], href: contactInfo?.phones?.[0] ? `tel:+62${contactInfo.phones[0].replace(/\D/g, '')}` : 'tel:+6281390788045' },
+    { icon: Phone, title: 'Telepon / WhatsApp', lines: contactInfo?.phones || ['0813-9078-8045'], href: `https://wa.me/${contactInfo?.whatsappNumber || '6281390788045'}` },
     { icon: Mail, title: 'Email', lines: contactInfo?.emails || ['office@akbardharmakarya.com'], href: contactInfo?.emails?.[0] ? `mailto:${contactInfo.emails[0]}` : 'mailto:office@akbardharmakarya.com' },
     { icon: MapPin, title: 'Alamat', lines: contactInfo?.address?.split('\n') || ['Laguna Spring Hills B 03, Condrowangsan', 'Baturetno, Banguntapan, Bantul', 'DI Yogyakarta'], href: undefined },
   ]

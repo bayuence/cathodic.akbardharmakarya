@@ -22,6 +22,7 @@ export default defineType({
       title: 'Nomor Telepon',
       type: 'array',
       of: [{type: 'string'}],
+      description: 'Format bebas (misal: 0813-9078-8045)',
     }),
     defineField({
       name: 'emails',
@@ -38,7 +39,7 @@ export default defineType({
       name: 'whatsappNumber',
       title: 'Nomor WhatsApp (Mulai dengan 62, Tanpa tanda +)',
       type: 'string',
-      description: 'Contoh: 6287825167150',
+      description: 'Contoh: 6281390788045',
     }),
     defineField({
       name: 'companyProfile',

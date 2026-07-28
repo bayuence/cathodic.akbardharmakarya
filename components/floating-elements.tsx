@@ -17,7 +17,7 @@ export default function FloatingElements() {
 
   return (
     <>
-      <motion.a href="https://wa.me/6287825167150" target="_blank" rel="noopener noreferrer"
+      <motion.a href="https://wa.me/6281390788045" target="_blank" rel="noopener noreferrer"
         className="fixed bottom-24 sm:bottom-6 right-4 sm:right-6 z-50 group" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} aria-label="Contact via WhatsApp">
         <div className="relative">
           <div className="absolute inset-0 rounded-full bg-green-500/30 animate-ping" />

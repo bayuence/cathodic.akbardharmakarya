@@ -40,9 +40,9 @@ export default function Navbar() {
               <Image
                 src="/logo.png"
                 alt="CV Akbar Dharma Karya Logo"
-                width={40}
+                width={80}
                 height={40}
-                className="rounded-lg"
+                className="w-auto h-10 object-contain"
               />
               <div className="hidden sm:block">
                 {/* Judul CV */}

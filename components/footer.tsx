@@ -53,7 +53,7 @@ export default function Footer() {
       links: [
         { 
           label: contactInfo?.phones?.[0] || '0813-9078-8045', 
-          href: `tel:${(contactInfo?.phones?.[0] || '0813-9078-8045').replace(/\D/g, '')}` 
+          href: `https://wa.me/${contactInfo?.whatsappNumber || '6281390788045'}` 
         },
         { 
           label: contactInfo?.emails?.[0] || 'office@akbardharmakarya.com', 
@@ -82,9 +82,9 @@ export default function Footer() {
               <Image 
                 src="/logo.png" 
                 alt="CV. Akbar Dharma Karya Logo" 
-                width={36} 
+                width={72} 
                 height={36} 
-                className="rounded-lg"
+                className="w-auto h-9 object-contain"
               />
               <div>
                 <p className="font-bold text-sm tracking-wide theme-text-heading">{footerData?.brandName || 'CV. AKBAR DHARMA KARYA'}</p>
