@@ -9,7 +9,7 @@ export default defineConfig({
   title: 'ADK Cathodic Studio',
   basePath: '/studio',
 
-  projectId: '85nfr1r7',
+  projectId: 'nne62kv2',
   dataset: 'production',
 
   plugins: [structureTool({structure}), visionTool()],
