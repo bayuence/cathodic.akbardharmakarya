@@ -81,7 +81,7 @@ export default function Footer() {
             <a href="#hero" className="flex items-center gap-3 group">
               <Image 
                 src="/logo.png" 
-                alt="PT. Abimanyu Abadi Logo" 
+                alt="CV. Akbar Dharma Karya Logo" 
                 width={36} 
                 height={36} 
                 className="rounded-lg"
