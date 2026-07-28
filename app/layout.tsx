@@ -65,11 +65,9 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico',
   },
   manifest: '/manifest.json',
-  // ⚠️ Ganti nilai di bawah dengan kode verifikasi dari Google Search Console
-  // Cara: Login GSC → Tambah properti → Pilih "HTML tag" → Copy kode
-  // verification: {
-  //   google: 'GANTI_DENGAN_KODE_VERIFIKASI_GSC_ANDA',
-  // },
+  verification: {
+    google: 'WtKorw8HaGA5-sokzd6o2nD0VUjWxeNU2yhDtecIZhg',
+  },
   openGraph: {
     title: 'CV Akbar Dharma Karya — Cathodic Protection & Corrosion Control',
     description:
