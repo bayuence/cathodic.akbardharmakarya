@@ -8,7 +8,11 @@
     "dev:all": "concurrently -n \"Next,Sanity\" -c \"cyan,yellow\" \"next dev\" \"sanity dev\"",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
+    "start:hosting": "node server.js",
     "lint": "eslint ."
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

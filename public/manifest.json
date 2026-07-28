@@ -1,0 +1,33 @@
+{
+  "name": "CV Akbar Dharma Karya — Cathodic Protection",
+  "short_name": "ADK Cathodic",
+  "description": "CV Akbar Dharma Karya — Solusi profesional Cathodic Protection, Corrosion Control, Survey & Inspection untuk industri Indonesia.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060B18",
+  "theme_color": "#1a3a6b",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "id",
+  "categories": ["business", "engineering", "utilities"],
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

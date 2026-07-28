@@ -5,6 +5,51 @@ import { motion } from 'framer-motion'
 import { fetchServices, Service } from '@/lib/fetchServices'
 import { getLucideIcon } from '@/lib/getLucideIcon'
 
+const defaultServices: Service[] = [
+  {
+    _id: 'service-1',
+    title: 'Cathodic Protection System',
+    description: 'Penyediaan turn-key project untuk sistem proteksi katodik baik metode Sacrificial Anode (Anoda Korban) maupun Impressed Current Cathodic Protection (ICCP) pada pipeline, jetty, offshore platform, tangki, dan struktur beton.',
+    icon: 'Shield',
+    order: 1
+  },
+  {
+    _id: 'service-2',
+    title: 'Indirect & Direct Assessment Survey',
+    description: 'Survey dan inspeksi korosi pada pipa bawah tanah dengan metode Pearson Survey, Close Interval Potential Survey (CIPS), Direct Current Voltage Gradient (DCVG), Pipeline Current Mapping (PCM), serta Soil Resistivity Survey.',
+    icon: 'Activity',
+    order: 2
+  },
+  {
+    _id: 'service-3',
+    title: 'Underwater & Marine Work Services',
+    description: 'Inspeksi, pengujian, instalasi anoda korban, dan pemeliharaan struktur bawah air dan maritim yang melibatkan tim penyelam profesional dan survey pipeline lepas pantai.',
+    icon: 'Anchor',
+    order: 3
+  },
+  {
+    _id: 'service-4',
+    title: 'Pipeline Rehabilitation & Repair',
+    description: 'Layanan rehabilitasi coating pipa, perbaikan mekanis pipa yang terkorosi, wrapping, dan solusi restorasi integritas pipa transmisi migas maupun air.',
+    icon: 'Wrench',
+    order: 4
+  },
+  {
+    _id: 'service-5',
+    title: 'Splash Zone Protection System',
+    description: 'Sistem perlindungan area pasang surut (splash zone) menggunakan HDPE outer cover dikombinasikan dengan STAC wrap/tape untuk mencegah korosi ekstrem akibat oksigen dan air laut.',
+    icon: 'Waves',
+    order: 5
+  },
+  {
+    _id: 'service-6',
+    title: 'Material Supply & Manufacturing',
+    description: 'Penyediaan dan pabrikasi material cathodic protection berkualitas tinggi termasuk anoda magnesium, anoda zinc, anoda aluminium, silicon iron anodes, kabel CP, transformer rectifier, dan insulating joints.',
+    icon: 'Layers',
+    order: 6
+  }
+]
+
 export default function Services() {
   const [services, setServices] = useState<Service[]>([])
   const [isLoading, setIsLoading] = useState(true)
@@ -13,7 +58,13 @@ export default function Services() {
     const loadServices = async () => {
       try {
         const data = await fetchServices()
-        setServices(data)
+        if (data && data.length > 0) {
+          setServices(data)
+        } else {
+          setServices(defaultServices)
+        }
+      } catch (error) {
+        setServices(defaultServices)
       } finally {
         setIsLoading(false)
       }

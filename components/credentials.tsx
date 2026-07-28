@@ -61,33 +61,42 @@ export default function Credentials() {
   const stats = credentials.slice(0, 4)
   const credCards = credentials.slice(4)
 
+  const defaultStats = [
+    { _id: 'stat-1', label: 'Proyek Selesai', value: '50+' },
+    { _id: 'stat-2', label: 'Klien Aktif', value: '10+' },
+    { _id: 'stat-3', label: 'Tahun Pengalaman', value: '5+' },
+    { _id: 'stat-4', label: 'Kepatuhan HSE', value: '100%' },
+  ]
+
+  const statsList = stats.length > 0 ? stats : defaultStats
+
   const credentialCardsList = credCards.length > 0 ? credCards : [
     {
       _id: '1',
-      label: 'BERPENGALAMAN',
+      label: 'TECHNICAL COMPETENCE',
       value: '01',
-      description: 'Multi-sektor industri dari migas hingga properti premium',
+      description: 'Dukungan sumber daya manusia dan tenaga ahli bersertifikasi nasional & internasional di bidang Cathodic Protection.',
       order: 1,
     },
     {
       _id: '2',
-      label: 'BERKUALITAS',
+      label: 'QUALITY ORIENTED',
       value: '02',
-      description: 'Material dan metode kerja berstandar korporat nasional',
+      description: 'Material dan sistem perlindungan korosi berkualitas tinggi serta sesuai dengan standar teknis internasional.',
       order: 2,
     },
     {
       _id: '3',
-      label: 'TEPAT WAKTU',
+      label: 'INTEGRATED TECHNICAL SERVICES',
       value: '03',
-      description: 'Track record penyelesaian proyek sesuai milestone',
+      description: 'Layanan lengkap dari survey lapangan, desain sistem, suplai material, instalasi, pengujian, hingga pemeliharaan.',
       order: 3,
     },
     {
       _id: '4',
-      label: 'TERPERCAYA',
+      label: 'FLEXIBLE & RESPONSIVE',
       value: '04',
-      description: 'Klien tier-1 yang berulang kali mempercayakan proyek baru',
+      description: 'Solusi teknis yang profesional, fleksibel, responsif, dan tepat guna sesuai dengan kebutuhan spesifik aset pelanggan.',
       order: 4,
     },
   ]
@@ -124,7 +133,7 @@ export default function Credentials() {
 
               {/* Stats Grid */}
               <div className="grid grid-cols-2 gap-8">
-                {stats.map((stat, i) => {
+                {statsList.map((stat, i) => {
                   const numValue = parseInt(stat.value) || 0
                   const suffix = stat.value.includes('%') ? '%' : '+'
                   return (

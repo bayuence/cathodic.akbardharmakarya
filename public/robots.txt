@@ -1,7 +1,49 @@
+# ─── Default: Semua bot diperbolehkan ───────────────────────
 User-agent: *
 Allow: /
-
-# Larang bot masuk ke Sanity Studio
 Disallow: /studio/
+Disallow: /api/
 
-Sitemap: https://abimayuabadi.com/sitemap.xml
+# ─── Google ──────────────────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# ─── Google AI (Gemini) ──────────────────────────────────────
+User-agent: Google-Extended
+Allow: /
+
+# ─── OpenAI / ChatGPT ────────────────────────────────────────
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# ─── Anthropic / Claude ──────────────────────────────────────
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# ─── Perplexity AI ───────────────────────────────────────────
+User-agent: PerplexityBot
+Allow: /
+
+# ─── Meta / Facebook ─────────────────────────────────────────
+User-agent: facebookexternalhit
+Allow: /
+
+# ─── LinkedIn ────────────────────────────────────────────────
+User-agent: LinkedInBot
+Allow: /
+
+# ─── Bing ────────────────────────────────────────────────────
+User-agent: Bingbot
+Allow: /
+
+# ─── Sitemaps ────────────────────────────────────────────────
+Sitemap: https://cathodic.akbardharmakarya.com/sitemap.xml

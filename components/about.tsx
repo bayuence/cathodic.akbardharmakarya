@@ -43,21 +43,21 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
 // Fallback data if Sanity is empty or fails
 const defaultData: AboutData = {
   tagline: 'TENTANG PERUSAHAAN',
-  title: 'Integritas Dalam Setiap Proyek, Kualitas Dalam Setiap Detail',
-  description: 'PT. Abimanyu Abadi adalah kontraktor umum dan supplier terpercaya yang telah melayani klien-klien korporat tier-1 Indonesia selama lebih dari satu dekade. Kami memahami bahwa setiap proyek adalah kombinasi unik dari tantangan teknis, kebutuhan bisnis, dan standar kualitas tertinggi.',
+  title: 'Profesional Dalam Perlindungan, Andal Dalam Setiap Layanan',
+  description: 'CV Akbar Dharma Karya adalah perusahaan yang bergerak di bidang Cathodic Protection dan Corrosion Control, dengan layanan pendukung meliputi Survey, Inspection & Testing, Instalasi, serta Maintenance. Kami hadir untuk memberikan solusi profesional dalam menjaga integritas, keandalan, dan keberlangsungan operasional berbagai aset dan infrastruktur pada berbagai sektor industri.',
   stats: [
     { value: 50, label: 'Proyek Selesai', suffix: '+' },
-    { value: 15, label: 'Klien Korporat', suffix: '+' },
-    { value: 10, label: 'Tahun Pengalaman', suffix: '+' },
+    { value: 10, label: 'Klien Aktif', suffix: '+' },
+    { value: 5, label: 'Tahun Pengalaman', suffix: '+' },
   ],
   badges: [
-    { name: 'SIUJK', description: 'Jasa Konstruksi' },
-    { name: 'SBU', description: 'Badan Usaha' },
+    { name: 'NPWP', description: 'Wajib Pajak' },
     { name: 'NIB', description: 'Induk Berusaha' },
+    { name: 'SPPKP', description: 'Pengusaha Kena Pajak' },
   ],
   videos: [
-    { title: 'High-Rise Construction', location: 'Jakarta Project', videoId: 'iGCH44aqfcE' },
-    { title: 'Industrial Development', location: 'Surabaya Site', videoId: 'MNg6fr2iKX0' }
+    { title: 'Cathodic Protection Installation', location: 'Field Project', videoId: 'iGCH44aqfcE' },
+    { title: 'Corrosion Control Survey', location: 'Pipeline Site', videoId: 'MNg6fr2iKX0' }
   ]
 }
 

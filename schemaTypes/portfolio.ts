@@ -17,10 +17,10 @@ export default defineType({
       type: 'string',
       options: {
         list: [
-          { title: 'Industri', value: 'industri' },
-          { title: 'Warehouse', value: 'warehouse' },
-          { title: 'Residensial', value: 'residensial' },
-          { title: 'Komersial', value: 'komersial' },
+          { title: 'Pipa Transmisi', value: 'pipeline' },
+          { title: 'Struktur Maritim', value: 'marine' },
+          { title: 'Refinery & Plant', value: 'plant' },
+          { title: 'Tangki Penyimpanan', value: 'tank' },
         ],
       },
       validation: Rule => Rule.required(),

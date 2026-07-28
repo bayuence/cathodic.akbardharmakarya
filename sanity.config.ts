@@ -6,7 +6,7 @@ import {structure} from './sanity/structure'
 
 export default defineConfig({
   name: 'default',
-  title: 'PT Abimayu Abadi',
+  title: 'ADK Cathodic Studio',
   basePath: '/studio',
 
   projectId: '85nfr1r7',

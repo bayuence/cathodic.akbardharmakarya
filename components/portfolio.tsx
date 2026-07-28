@@ -7,10 +7,25 @@ import { fetchPortfolio, type Portfolio as PortfolioItem } from '@/lib/fetchPort
 import PortfolioGalleryModal from './portfolio-gallery-modal'
 
 const categoryBadge: Record<string, string> = {
+  pipeline: 'bg-blue-500/10 text-blue-500 border-blue-500/20',
+  marine: 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20',
+  plant: 'bg-amber-500/10 text-amber-500 border-amber-500/20',
+  tank: 'bg-violet-500/10 text-violet-500 border-violet-500/20',
   industri: 'bg-amber-500/10 text-amber-500 border-amber-500/20',
   warehouse: 'bg-blue-500/10 text-blue-500 border-blue-500/20',
   residensial: 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20',
   komersial: 'bg-violet-500/10 text-violet-500 border-violet-500/20',
+}
+
+const categoryNameMap: Record<string, string> = {
+  pipeline: 'Pipa Transmisi',
+  marine: 'Struktur Maritim',
+  plant: 'Refinery & Plant',
+  tank: 'Tangki Penyimpanan',
+  industri: 'Industri',
+  warehouse: 'Warehouse',
+  residensial: 'Residensial',
+  komersial: 'Komersial',
 }
 
 function ProjectCard({ project, onSelect }: { project: PortfolioItem; onSelect: (id: string) => void }) {
@@ -62,7 +77,7 @@ function ProjectCard({ project, onSelect }: { project: PortfolioItem; onSelect: 
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
         <div className="absolute inset-0 bg-[var(--accent)]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         <div className={`absolute top-4 left-4 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider border ${badge} transition-all duration-300 group-hover:scale-110 backdrop-blur-md z-10`}>
-          {project.category}
+          {categoryNameMap[project.category] || project.category}
         </div>
         
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0 z-10">
@@ -103,6 +118,59 @@ function ProjectCard({ project, onSelect }: { project: PortfolioItem; onSelect: 
   )
 }
 
+const defaultProjects: PortfolioItem[] = [
+  {
+    _id: 'proj-1',
+    name: 'Survey CIPS & DCVG Pipeline Transmisi Gas 12"',
+    category: 'pipeline',
+    client: 'PT Perusahaan Gas Negara',
+    location: 'Sumatera Selatan - Jawa Barat',
+    year: 2025,
+    description: 'Pemeriksaan integritas dan proteksi katodik pipa baja transmisi gas bumi sepanjang 45 km menggunakan metode Close Interval Potential Survey (CIPS) dan Direct Current Voltage Gradient (DCVG).',
+    images: []
+  },
+  {
+    _id: 'proj-2',
+    name: 'Instalasi ICCP & Anoda Korban Jetty Pelabuhan',
+    category: 'marine',
+    client: 'PT Pertamina (Persero)',
+    location: 'Cilacap, Jawa Tengah',
+    year: 2025,
+    description: 'Pekerjaan rancang bangun, suplai material, instalasi, dan commissioning Impressed Current Cathodic Protection (ICCP) serta anoda korban aluminium pada tiang pancang baja dermaga.',
+    images: []
+  },
+  {
+    _id: 'proj-3',
+    name: 'Sistem Proteksi Katodik Internal Tangki BBM 5000 KL',
+    category: 'tank',
+    client: 'PT Pertamina Patra Niaga',
+    location: 'Surabaya, Jawa Timur',
+    year: 2026,
+    description: 'Pemasangan anoda korban aluminium bersertifikasi untuk perlindungan karat bagian dalam (internal tank bottom) tangki penyimpanan BBM.',
+    images: []
+  },
+  {
+    _id: 'proj-4',
+    name: 'Proteksi Katodik Struktur Beton Jembatan Maritim',
+    category: 'marine',
+    client: 'Kementerian PUPR',
+    location: 'Sulawesi Utara',
+    year: 2024,
+    description: 'Penerapan sistem proteksi katodik tipe anoda korban seng (zinc mesh) pada besi tulangan beton jembatan laut guna mencegah kerusakan akibat korosi klorida.',
+    images: []
+  },
+  {
+    _id: 'proj-5',
+    name: 'Audit Sistem Proteksi Katodik Kilang LNG',
+    category: 'plant',
+    client: 'PT Badak NGL',
+    location: 'Bontang, Kalimantan Timur',
+    year: 2026,
+    description: 'Inspeksi, pengujian Soil Resistivity, pengukuran potensial proteksi katodik, dan penyusunan rekomendasi perbaikan sistem korosi area kilang pengolahan gas alam cair.',
+    images: []
+  }
+]
+
 export default function Portfolio() {
   const [projects, setProjects] = useState<PortfolioItem[]>([])
   const [isLoading, setIsLoading] = useState(true)
@@ -113,7 +181,13 @@ export default function Portfolio() {
     const loadProjects = async () => {
       try {
         const data = await fetchPortfolio()
-        setProjects(data)
+        if (data && data.length > 0) {
+          setProjects(data)
+        } else {
+          setProjects(defaultProjects)
+        }
+      } catch (error) {
+        setProjects(defaultProjects)
       } finally {
         setIsLoading(false)
       }
@@ -132,7 +206,7 @@ export default function Portfolio() {
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="mb-12 text-center">
           <p className="text-[11px] font-bold tracking-[0.2em] uppercase theme-text-accent mb-4">PORTOFOLIO PROYEK</p>
           <h2 className="text-4xl md:text-5xl font-bold theme-text-heading mb-5">Rekam Jejak <span className="gradient-text">Nyata</span></h2>
-          <p className="theme-text-body max-w-2xl mx-auto">Lintas sektor industri — dari infrastruktur migas hingga properti premium</p>
+          <p className="theme-text-body max-w-2xl mx-auto">Lintas sektor industri — dari pipa transmisi migas hingga perlindungan area pasang surut (splash zone)</p>
         </motion.div>
 
         <div className="flex flex-wrap gap-2 mb-12 justify-center">
@@ -143,7 +217,7 @@ export default function Portfolio() {
                   ? 'bg-[var(--accent)] text-white border-transparent shadow-lg'
                   : 'bg-transparent theme-text-body theme-border-subtle hover:border-[var(--accent)] hover:theme-text-heading'
               }`}>
-              {cat === 'semua' ? 'Semua' : cat.charAt(0).toUpperCase() + cat.slice(1)}
+              {cat === 'semua' ? 'Semua' : (categoryNameMap[cat] || cat.charAt(0).toUpperCase() + cat.slice(1))}
             </button>
           ))}
         </div>

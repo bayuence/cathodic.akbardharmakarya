@@ -4,8 +4,8 @@ import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
-  name: 'pt-abimayu-studio',
-  title: 'PT Abimayu Abadi Studio',
+  name: 'adk-cathodic-studio',
+  title: 'ADK Cathodic Studio',
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'YOUR_PROJECT_ID',
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
   plugins: [deskTool(), visionTool()],

@@ -39,18 +39,18 @@ export default function Navbar() {
             <a href="#hero" className="flex items-center gap-3 group">
               <Image
                 src="/logo.png"
-                alt="PT. Abimanyu Abadi Logo"
+                alt="CV Akbar Dharma Karya Logo"
                 width={40}
                 height={40}
                 className="rounded-lg"
               />
               <div className="hidden sm:block">
-                {/* Judul PT */}
+                {/* Judul CV */}
                 <p className={`text-[13px] font-bold leading-tight tracking-wide transition-colors duration-300 ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
-                  PT. ABIMANYU ABADI
+                  CV. AKBAR DHARMA KARYA
                 </p>
                 <p className={`text-[10px] font-medium tracking-[0.15em] transition-colors duration-300 ${isScrolled ? 'text-amber-600' : 'text-amber-300'}`}>
-                  General Contractor & Supplier
+                  Cathodic Protection & Corrosion Control
                 </p>
               </div>
             </a>

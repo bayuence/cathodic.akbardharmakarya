@@ -25,7 +25,14 @@
 # Typescript
 *.tsbuildinfo
 
-# Dotenv and similar local-only files
+# Dotenv and environment files
+.env
+.env.production
+.env.local
+.env.development
+.env.test
+.env.production.local
+.env.development.local
 *.local
 
 # Next.js

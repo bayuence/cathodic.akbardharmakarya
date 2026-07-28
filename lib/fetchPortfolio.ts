@@ -1,6 +1,6 @@
-import {sanityClient} from './sanity.client'
-import {portfolioQuery} from './sanity.queries'
-import {urlFor} from './sanity.image'
+import { sanityClient } from './sanity.client'
+import { portfolioQuery } from './sanity.queries'
+import { urlFor } from './sanity.image'
 
 export interface PortfolioImage {
   _key: string
@@ -15,7 +15,7 @@ export interface PortfolioImage {
 export interface Portfolio {
   _id: string
   name: string
-  category: 'industri' | 'warehouse' | 'residensial' | 'komersial'
+  category: 'pipeline' | 'marine' | 'plant' | 'tank' | 'industri' | 'warehouse' | 'residensial' | 'komersial'
   client: string
   location?: string
   year?: number

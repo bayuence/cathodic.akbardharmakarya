@@ -25,11 +25,27 @@ export default function Hero() {
           setSlides([
             {
               _id: 'fallback-slide-1',
-              tag: 'WELCOME',
-              title: 'PT Abimayu Abadi',
-              subtitle: 'Tambahkan hero slides di Sanity Studio untuk melihat konten yang disesuaikan',
+              tag: 'CV AKBAR DHARMA KARYA',
+              title: 'Cathodic Protection Specialist',
+              subtitle: 'Solusi profesional dalam menjaga integritas, keandalan, dan keberlangsungan operasional aset industri Anda dari korosi.',
               youtubeVideoId: 'dQw4w9WgXcQ',
-              duration: 5000
+              duration: 10000
+            },
+            {
+              _id: 'fallback-slide-2',
+              tag: 'CORROSION CONTROL',
+              title: 'Survey, Inspection & Testing',
+              subtitle: 'Pemeriksaan dan pengujian menyeluruh menggunakan metode CIPS, DCVG, PCM, Soil Resistivity Survey, NDT, UT, dan LRUT.',
+              youtubeVideoId: 'dQw4w9WgXcQ',
+              duration: 10000
+            },
+            {
+              _id: 'fallback-slide-3',
+              tag: 'ENGINEERING & MAINTENANCE',
+              title: 'Instalasi & Pemeliharaan Aset',
+              subtitle: 'Dukungan tim ahli bersertifikasi untuk perancangan, pemasangan, commissioning, dan pemeliharaan berkala sistem proteksi katodik.',
+              youtubeVideoId: 'dQw4w9WgXcQ',
+              duration: 10000
             }
           ])
         }

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Plus_Jakarta_Sans } from 'next/font/google'
+import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
-import Script from 'next/script'
 import './globals.css'
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -13,40 +13,38 @@ const plusJakarta = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://abimayuabadi.com'),
+  metadataBase: new URL('https://cathodic.akbardharmakarya.com'),
   title: {
-    default: 'PT. Abimayu Abadi \u2014 General Contractor & Supplier Indonesia',
-    template: '%s | PT. Abimayu Abadi',
+    default: 'CV Akbar Dharma Karya — Cathodic Protection & Corrosion Control',
+    template: '%s | CV Akbar Dharma Karya',
   },
   description:
-    'PT. Abimayu Abadi adalah kontraktor umum dan supplier terpercaya di Indonesia. Berpengalaman dalam infrastruktur migas, perkeretaapian, warehouse industri, dan properti premium dengan klien korporat tier-1.',
+    'CV Akbar Dharma Karya adalah perusahaan profesional di bidang Cathodic Protection, Corrosion Control, Survey, Inspection & Testing, Instalasi, dan Maintenance. Mitra terpercaya untuk perlindungan aset dan infrastruktur berbagai sektor industri.',
   keywords: [
-    'PT Abimayu Abadi',
-    'Abimayu Abadi',
-    'abimayuabadi',
-    'kontraktor umum Indonesia',
-    'general contractor Indonesia',
-    'supplier industri Indonesia',
-    'jasa kontraktor',
-    'infrastruktur migas',
-    'konstruksi perkeretaapian',
-    'warehouse industri',
-    'properti premium',
-    'kontraktor terpercaya',
-    'kontraktor berpengalaman',
-    'supplier terpercaya Indonesia',
-    'jasa konstruksi profesional',
-    'kontraktor korporat',
-    'proyek infrastruktur Indonesia',
-    'abimayuabadi.com',
-    'PT Abimayu',
-    'general contractor supplier',
-    'kontraktor oil and gas',
-    'konstruksi nasional',
+    'CV Akbar Dharma Karya',
+    'Akbar Dharma Karya',
+    'akbardharmakarya',
+    'cathodic protection Indonesia',
+    'corrosion control Indonesia',
+    'perlindungan korosi',
+    'cathodic protection specialist',
+    'survey inspeksi pipeline',
+    'impressed current cathodic protection',
+    'sacrificial anode',
+    'CIPS DCVG PCM survey',
+    'offshore pipeline survey',
+    'cathodic protection engineering',
+    'corrosion inspection testing',
+    'instalasi cathodic protection',
+    'maintenance cathodic protection',
+    'akbardharmakarya.com',
+    'cathodic protection Yogyakarta',
+    'corrosion control migas',
+    'perlindungan infrastruktur logam',
   ],
-  authors: [{ name: 'PT. Abimayu Abadi' }],
-  creator: 'PT. Abimayu Abadi',
-  publisher: 'PT. Abimayu Abadi',
+  authors: [{ name: 'CV Akbar Dharma Karya' }],
+  creator: 'CV Akbar Dharma Karya',
+  publisher: 'CV Akbar Dharma Karya',
   robots: {
     index: true,
     follow: true,
@@ -59,40 +57,42 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://abimayuabadi.com',
+    canonical: 'https://cathodic.akbardharmakarya.com',
   },
   icons: {
-    icon: '/logo.png',
+    icon: '/favicon.ico',
     apple: '/logo.png',
-    shortcut: '/logo.png',
+    shortcut: '/favicon.ico',
   },
+  manifest: '/manifest.json',
+  // ⚠️ Ganti nilai di bawah dengan kode verifikasi dari Google Search Console
+  // Cara: Login GSC → Tambah properti → Pilih "HTML tag" → Copy kode
+  // verification: {
+  //   google: 'GANTI_DENGAN_KODE_VERIFIKASI_GSC_ANDA',
+  // },
   openGraph: {
-    title: 'PT. Abimayu Abadi \u2014 General Contractor & Supplier',
+    title: 'CV Akbar Dharma Karya — Cathodic Protection & Corrosion Control',
     description:
-      'Kontraktor umum dan supplier terpercaya dengan rekam jejak korporat tier-1 Indonesia. Infrastruktur migas, perkeretaapian, dan properti premium.',
-    url: 'https://abimayuabadi.com',
-    siteName: 'PT. Abimayu Abadi',
+      'Solusi profesional Cathodic Protection dan Corrosion Control untuk industri migas, maritim, dan infrastruktur Indonesia.',
+    url: 'https://cathodic.akbardharmakarya.com',
+    siteName: 'CV Akbar Dharma Karya',
     locale: 'id_ID',
     type: 'website',
     images: [
       {
-        url: '/logo.png',
-        width: 512,
-        height: 512,
-        alt: 'PT. Abimayu Abadi \u2014 General Contractor & Supplier Indonesia',
+        url: '/api/og?title=CV+Akbar+Dharma+Karya&desc=Cathodic+Protection+%26+Corrosion+Control+Specialist+Indonesia',
+        width: 1200,
+        height: 630,
+        alt: 'CV Akbar Dharma Karya — Cathodic Protection & Corrosion Control Indonesia',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PT. Abimayu Abadi \u2014 General Contractor & Supplier',
+    title: 'CV Akbar Dharma Karya — Cathodic Protection & Corrosion Control',
     description:
-      'Kontraktor umum dan supplier terpercaya dengan rekam jejak korporat tier-1 Indonesia.',
-    images: ['/logo.png'],
-  },
-  // ✅ Google Search Console Verification
-  verification: {
-    google: 'oLt3FXSc1irlePDjj8qMX8SX3reiPDi13gEXAC5jQcc',
+      'Solusi profesional Cathodic Protection dan Corrosion Control untuk berbagai sektor industri Indonesia.',
+    images: ['/api/og?title=CV+Akbar+Dharma+Karya&desc=Cathodic+Protection+%26+Corrosion+Control'],
   },
 }
 
@@ -105,25 +105,29 @@ export const metadata: Metadata = {
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'PT. Abimayu Abadi',
-  alternateName: ['Abimayu Abadi', 'PT Abimayu Abadi'],
-  url: 'https://abimayuabadi.com',
+  name: 'CV Akbar Dharma Karya',
+  alternateName: ['Akbar Dharma Karya', 'ADK Cathodic'],
+  url: 'https://cathodic.akbardharmakarya.com',
   logo: {
     '@type': 'ImageObject',
-    url: 'https://abimayuabadi.com/logo.png',
+    url: 'https://cathodic.akbardharmakarya.com/logo.png',
     width: 512,
     height: 512,
   },
   description:
-    'PT. Abimayu Abadi adalah kontraktor umum dan supplier terpercaya di Indonesia dengan pengalaman di infrastruktur migas, perkeretaapian, warehouse industri, dan properti premium.',
+    'CV Akbar Dharma Karya adalah perusahaan profesional di bidang Cathodic Protection, Corrosion Control, Survey, Inspection & Testing, Instalasi, dan Maintenance untuk berbagai sektor industri.',
   foundingCountry: 'ID',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: 'Laguna Spring Hills B 03, Condrowangsan, Baturetno',
+    addressLocality: 'Banguntapan, Bantul',
+    addressRegion: 'DI Yogyakarta',
     addressCountry: 'ID',
-    addressLocality: 'Indonesia',
   },
   contactPoint: {
     '@type': 'ContactPoint',
+    telephone: '+62813-9078-8045',
+    email: 'office@akbardharmakarya.com',
     contactType: 'customer service',
     availableLanguage: ['Indonesian', 'English'],
   },
@@ -132,84 +136,117 @@ const organizationSchema = {
     name: 'Indonesia',
   },
   knowsAbout: [
-    'General Contracting',
-    'Industrial Supply',
-    'Oil & Gas Infrastructure',
-    'Railway Construction',
-    'Industrial Warehouse',
-    'Premium Property Development',
+    'Cathodic Protection',
+    'Corrosion Control',
+    'Pipeline Survey',
+    'Inspection & Testing',
+    'Offshore Structures',
+    'Marine Cathodic Protection',
   ],
-  sameAs: ['https://abimayuabadi.com'],
+  sameAs: [
+    'https://cathodic.akbardharmakarya.com',
+    'https://akbardharmakarya.com',
+  ],
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'CV Akbar Dharma Karya',
+    url: 'https://akbardharmakarya.com',
+    description: 'CV Akbar Dharma Karya — Kontraktor General Indonesia. Induk perusahaan dari divisi Cathodic Protection & Corrosion Control.',
+  },
 }
 
 // 2. WebSite Schema
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'PT. Abimayu Abadi',
-  url: 'https://abimayuabadi.com',
-  description: 'Website resmi PT. Abimayu Abadi \u2014 General Contractor & Supplier Indonesia',
+  name: 'CV Akbar Dharma Karya',
+  url: 'https://cathodic.akbardharmakarya.com',
+  description: 'Website resmi CV Akbar Dharma Karya — Cathodic Protection & Corrosion Control Indonesia',
   inLanguage: 'id-ID',
   publisher: {
     '@type': 'Organization',
-    name: 'PT. Abimayu Abadi',
+    name: 'CV Akbar Dharma Karya',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://abimayuabadi.com/logo.png',
+      url: 'https://cathodic.akbardharmakarya.com/logo.png',
     },
   },
 }
 
-// 3. LocalBusiness / GeneralContractor Schema — Untuk pencarian lokal & bisnis
+// 3. BreadcrumbList Schema — Membantu Google menampilkan breadcrumb di SERP
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Beranda',
+      item: 'https://akbardharmakarya.com',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Cathodic Protection & Corrosion Control',
+      item: 'https://cathodic.akbardharmakarya.com',
+    },
+  ],
+}
+
+// 4. LocalBusiness / Specialist Schema
 const localBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'GeneralContractor',
-  name: 'PT. Abimayu Abadi',
-  image: 'https://abimayuabadi.com/logo.png',
-  url: 'https://abimayuabadi.com',
+  '@type': 'ProfessionalService',
+  name: 'CV Akbar Dharma Karya',
+  image: 'https://cathodic.akbardharmakarya.com/logo.png',
+  url: 'https://cathodic.akbardharmakarya.com',
+  telephone: '+62813-9078-8045',
+  email: 'office@akbardharmakarya.com',
   description:
-    'Kontraktor umum dan supplier terpercaya di Indonesia dengan pengalaman di infrastruktur migas, perkeretaapian, warehouse, dan properti premium.',
+    'Perusahaan profesional di bidang Cathodic Protection, Corrosion Control, Survey, Inspection & Testing, Instalasi, dan Maintenance untuk berbagai sektor industri.',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: 'Laguna Spring Hills B 03, Condrowangsan, Baturetno',
+    addressLocality: 'Banguntapan, Bantul',
+    addressRegion: 'DI Yogyakarta',
     addressCountry: 'ID',
   },
-  priceRange: '$$$$',
   openingHours: 'Mo-Fr 08:00-17:00',
   areaServed: 'Indonesia',
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'Layanan PT. Abimayu Abadi',
+    name: 'Layanan CV Akbar Dharma Karya',
     itemListElement: [
       {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Infrastruktur Migas',
-          description: 'Konstruksi dan supply untuk sektor minyak dan gas bumi',
+          name: 'Cathodic Protection System',
+          description: 'Sacrificial Anode & Impressed Current Cathodic Protection',
         },
       },
       {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Konstruksi Perkeretaapian',
-          description: 'Pembangunan infrastruktur perkeretaapian nasional',
+          name: 'Corrosion Control',
+          description: 'Pengendalian korosi pada aset dan infrastruktur logam',
         },
       },
       {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Warehouse Industri',
-          description: 'Pembangunan gudang dan fasilitas industri skala besar',
+          name: 'Survey & Inspection',
+          description: 'CIPS, DCVG, PCM, Soil Resistivity Survey, NDT, UT, LRUT',
         },
       },
       {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Properti Premium',
-          description: 'Pengembangan properti komersial dan residensial premium',
+          name: 'Offshore & Underwater Work',
+          description: 'Offshore pipeline survey dan service under water work',
         },
       },
     ],
@@ -223,32 +260,37 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" data-theme="light" className={`scroll-smooth snap-y snap-mandatory ${plusJakarta.variable}`} suppressHydrationWarning>
-      <head>
-        {/* ✅ JSON-LD Structured Data untuk Google Rich Results */}
-        <Script
-          id="organization-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-          strategy="beforeInteractive"
-        />
-        <Script
-          id="website-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-          strategy="beforeInteractive"
-        />
-        <Script
-          id="localbusiness-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-          strategy="beforeInteractive"
-        />
-      </head>
       <body className={`${plusJakarta.className} font-sans antialiased theme-bg-primary`}>
         <ThemeProvider>
           {children}
         </ThemeProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
+        {/* ✅ JSON-LD Structured Data untuk Google Rich Results & AI Discovery */}
+        {/* Strategy "beforeInteractive" agar Googlebot membaca schema lebih awal */}
+        <Script
+          id="schema-organization"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <Script
+          id="schema-website"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <Script
+          id="schema-breadcrumb"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+        <Script
+          id="schema-localbusiness"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
       </body>
     </html>
   )

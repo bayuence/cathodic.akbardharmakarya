@@ -4,6 +4,9 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
 
+  // Output standalone untuk deployment yang lebih mudah di hosting
+  output: 'standalone',
+
   // Optimasi gambar: izinkan domain CDN Sanity
   images: {
     remotePatterns: [

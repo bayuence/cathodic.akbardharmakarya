@@ -9,13 +9,13 @@ export default defineType({
       name: 'copyright',
       title: 'Copyright Text',
       type: 'string',
-      initialValue: '© 2025 PT. Abimanyu Abadi. All rights reserved.',
+      initialValue: '© 2026 CV. Akbar Dharma Karya. All rights reserved.',
     }),
     defineField({
       name: 'footerInfo',
       title: 'Footer Info Text',
       type: 'string',
-      initialValue: 'General Contractor & Supplier · Jakarta, Indonesia',
+      initialValue: 'Cathodic Protection & Corrosion Control · Bantul, DI Yogyakarta',
     }),
     defineField({
       name: 'socials',

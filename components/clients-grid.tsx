@@ -4,6 +4,19 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { fetchClients, Client } from '@/lib/fetchClients'
 
+const defaultClients: Client[] = [
+  { _id: 'client-1', name: 'PT Pertamina (Persero)', order: 1 },
+  { _id: 'client-2', name: 'PT Perusahaan Gas Negara', order: 2 },
+  { _id: 'client-3', name: 'PT PLN (Persero)', order: 3 },
+  { _id: 'client-4', name: 'PT Pupuk Indonesia', order: 4 },
+  { _id: 'client-5', name: 'PT Wijaya Karya', order: 5 },
+  { _id: 'client-6', name: 'PT Adhi Karya', order: 6 },
+  { _id: 'client-7', name: 'PT Waskita Karya', order: 7 },
+  { _id: 'client-8', name: 'PT Hutama Karya', order: 8 },
+  { _id: 'client-9', name: 'PT Rekayasa Industri', order: 9 },
+  { _id: 'client-10', name: 'PT Elnusa Tbk', order: 10 }
+]
+
 export default function ClientsGrid() {
   const [clients, setClients] = useState<Client[]>([])
   const [isLoading, setIsLoading] = useState(true)
@@ -12,7 +25,13 @@ export default function ClientsGrid() {
     const loadClients = async () => {
       try {
         const data = await fetchClients()
-        setClients(data)
+        if (data && data.length > 0) {
+          setClients(data)
+        } else {
+          setClients(defaultClients)
+        }
+      } catch (error) {
+        setClients(defaultClients)
       } finally {
         setIsLoading(false)
       }

@@ -52,15 +52,15 @@ export default function Footer() {
       title: 'Kontak', 
       links: [
         { 
-          label: contactInfo?.phones?.[0] || '021-22708806', 
-          href: `tel:${(contactInfo?.phones?.[0] || '021-22708806').replace(/\D/g, '')}` 
+          label: contactInfo?.phones?.[0] || '0813-9078-8045', 
+          href: `tel:${(contactInfo?.phones?.[0] || '0813-9078-8045').replace(/\D/g, '')}` 
         },
         { 
-          label: contactInfo?.emails?.[0] || 'ops.abimanyu@gmail.com', 
-          href: `mailto:${contactInfo?.emails?.[0] || 'ops.abimanyu@gmail.com'}` 
+          label: contactInfo?.emails?.[0] || 'office@akbardharmakarya.com', 
+          href: `mailto:${contactInfo?.emails?.[0] || 'office@akbardharmakarya.com'}` 
         },
         { 
-          label: contactInfo?.address?.split('\n')[0] || 'Jakarta, Indonesia', 
+          label: contactInfo?.address?.split('\n')[0] || 'Bantul, DI Yogyakarta', 
           href: '#contact' 
         },
       ]
@@ -87,12 +87,12 @@ export default function Footer() {
                 className="rounded-lg"
               />
               <div>
-                <p className="font-bold text-sm tracking-wide theme-text-heading">{footerData?.brandName || 'PT. ABIMANYU ABADI'}</p>
-                <p className="theme-gold text-[10px] tracking-[0.12em]">{footerData?.tagline || 'General Contractor'}</p>
+                <p className="font-bold text-sm tracking-wide theme-text-heading">{footerData?.brandName || 'CV. AKBAR DHARMA KARYA'}</p>
+                <p className="theme-gold text-[10px] tracking-[0.12em]">{footerData?.tagline || 'Cathodic Protection & Corrosion Control'}</p>
               </div>
             </a>
             <p className="theme-text-muted text-sm leading-relaxed">
-              {footerData?.description || 'Membangun dengan Integritas — kontraktor umum dan supplier terpercaya untuk kebutuhan konstruksi korporat Indonesia.'}
+              {footerData?.description || 'Melayani perlindungan, pengendalian, inspeksi, pengujian, instalasi, dan pemeliharaan sistem proteksi katodik untuk keandalan aset industri Anda.'}
             </p>
             <div className="flex items-center gap-2">
               {dynamicSocials.map((social, i) => {
@@ -128,9 +128,9 @@ export default function Footer() {
         <div className="h-px bg-[var(--divider)] mb-8" />
 
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.4 }} viewport={{ once: true }} className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="theme-text-muted text-xs text-center md:text-left">{footerData?.copyright || '© 2025 PT. Abimanyu Abadi. All rights reserved.'}</p>
+          <p className="theme-text-muted text-xs text-center md:text-left">{footerData?.copyright || '© 2026 CV. Akbar Dharma Karya. All rights reserved.'}</p>
           <p className="theme-text-muted text-xs">
-            {footerData?.footerInfo || 'General Contractor & Supplier · Jakarta, Indonesia'}
+            {footerData?.footerInfo || 'Cathodic Protection & Corrosion Control · Bantul, DI Yogyakarta'}
           </p>
         </motion.div>
       </div>

@@ -15,13 +15,13 @@ export default defineType({
       name: 'title',
       title: 'Judul Utama',
       type: 'string',
-      initialValue: 'Integritas Dalam Setiap Proyek, Kualitas Dalam Setiap Detail'
+      initialValue: 'Profesional Dalam Perlindungan, Andal Dalam Setiap Layanan'
     }),
     defineField({
       name: 'description',
       title: 'Deskripsi',
       type: 'text',
-      initialValue: 'PT. Abimanyu Abadi adalah kontraktor umum dan supplier terpercaya yang telah melayani klien-klien korporat tier-1 Indonesia selama lebih dari satu dekade. Kami memahami bahwa setiap proyek adalah kombinasi unik dari tantangan teknis, kebutuhan bisnis, dan standar kualitas tertinggi.'
+      initialValue: 'CV Akbar Dharma Karya merupakan perusahaan yang bergerak di bidang Cathodic Protection dan Corrosion Control, dengan layanan pendukung meliputi Survey, Inspection & Testing, Instalasi, serta Maintenance. Kami hadir untuk memberikan solusi profesional dalam menjaga integritas, keandalan, dan keberlangsungan operasional berbagai aset dan infrastruktur pada berbagai sektor industri.'
     }),
     defineField({
       name: 'stats',
@@ -39,13 +39,13 @@ export default defineType({
       ],
       initialValue: [
         { value: 50, suffix: '+', label: 'Proyek Selesai' },
-        { value: 15, suffix: '+', label: 'Klien Korporat' },
-        { value: 10, suffix: '+', label: 'Tahun Pengalaman' }
+        { value: 10, suffix: '+', label: 'Klien Aktif' },
+        { value: 5, suffix: '+', label: 'Tahun Pengalaman' }
       ]
     }),
     defineField({
       name: 'badges',
-      title: 'Sertifikasi (SIUJK, SBU, dll)',
+      title: 'Sertifikasi / Legalitas',
       type: 'array',
       of: [
         {
@@ -57,9 +57,9 @@ export default defineType({
         }
       ],
       initialValue: [
-        { name: 'SIUJK', description: 'Jasa Konstruksi' },
-        { name: 'SBU', description: 'Badan Usaha' },
-        { name: 'NIB', description: 'Induk Berusaha' }
+        { name: 'NPWP', description: 'Wajib Pajak' },
+        { name: 'NIB', description: 'Induk Berusaha' },
+        { name: 'SPPKP', description: 'Pengusaha Kena Pajak' }
       ]
     }),
     defineField({
@@ -77,8 +77,8 @@ export default defineType({
         }
       ],
       initialValue: [
-        { title: 'High-Rise Construction', location: 'Jakarta Project', videoId: 'iGCH44aqfcE' },
-        { title: 'Industrial Development', location: 'Surabaya Site', videoId: 'MNg6fr2iKX0' }
+        { title: 'Cathodic Protection Installation', location: 'Field Project', videoId: 'iGCH44aqfcE' },
+        { title: 'Corrosion Control Survey', location: 'Pipeline Site', videoId: 'MNg6fr2iKX0' }
       ]
     })
   ]

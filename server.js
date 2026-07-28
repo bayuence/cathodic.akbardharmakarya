@@ -1,20 +1,29 @@
+#!/usr/bin/env node
+'use strict'
+
+/**
+ * server.js — Custom Next.js server untuk deployment di Jagoan Hosting
+ * 
+ * Di hosting, jalankan dengan:
+ *   NODE_ENV=production node server.js
+ * 
+ * Port akan dibaca dari environment variable PORT yang disediakan oleh hosting.
+ */
+
 const { createServer } = require('http')
 const { parse } = require('url')
 const next = require('next')
 
 const dev = process.env.NODE_ENV !== 'production'
-const hostname = 'localhost'
-const port = process.env.port || 8080
+const hostname = process.env.HOSTNAME || 'localhost'
+const port = parseInt(process.env.PORT || process.env.port || '8080', 10)
 
-// when using middleware `hostname` and `port` must be provided below
 const app = next({ dev, hostname, port })
 const handle = app.getRequestHandler()
 
 app.prepare().then(() => {
   createServer(async (req, res) => {
     try {
-      // Be sure to pass `true` as the second argument to `url.parse`.
-      // This tells it to parse the query portion of the URL.
       const parsedUrl = parse(req.url, true)
       await handle(req, res, parsedUrl)
     } catch (err) {
@@ -26,5 +35,6 @@ app.prepare().then(() => {
     if (err) throw err
     console.log(`> Ready on http://${hostname}:${port}`)
     console.log(`> Environment: ${process.env.NODE_ENV}`)
+    console.log(`> Started at: ${new Date().toISOString()}`)
   })
 })

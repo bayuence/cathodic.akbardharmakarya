@@ -29,15 +29,15 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    const whatsappNumber = contactInfo?.whatsappNumber || '6287825167150'
+    const whatsappNumber = contactInfo?.whatsappNumber || '6281390788045'
     const message = `*Permintaan Penawaran Baru*%0A%0A*Nama:* ${formData.nama}%0A*Perusahaan:* ${formData.perusahaan}%0A*Email:* ${formData.email}%0A*Telepon:* ${formData.telepon}%0A*Kebutuhan:* ${formData.kebutuhan}%0A*Estimasi:* ${formData.estimasi}%0A*Deskripsi:*%0A${formData.deskripsi}`
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank')
   }
 
   const defaultContactInfo = [
-    { icon: Phone, title: 'Telepon', lines: contactInfo?.phones || ['021-22708806', '0878-2516-7150', '0856-7135-400'], href: contactInfo?.phones?.[0] ? `tel:+62${contactInfo.phones[0].replace(/\D/g, '')}` : 'tel:+62212270880' },
-    { icon: Mail, title: 'Email', lines: contactInfo?.emails || ['ops.abimanyu@gmail.com'], href: contactInfo?.emails?.[0] ? `mailto:${contactInfo.emails[0]}` : 'mailto:ops.abimanyu@gmail.com' },
-    { icon: MapPin, title: 'Alamat', lines: contactInfo?.address?.split('\n') || ['Gd. AD Premier Lt.17 Suite 04B', 'Jl. TB Simatupang', 'Jakarta Selatan 12550'], href: undefined },
+    { icon: Phone, title: 'Telepon / WhatsApp', lines: contactInfo?.phones || ['0813-9078-8045'], href: contactInfo?.phones?.[0] ? `tel:+62${contactInfo.phones[0].replace(/\D/g, '')}` : 'tel:+6281390788045' },
+    { icon: Mail, title: 'Email', lines: contactInfo?.emails || ['office@akbardharmakarya.com'], href: contactInfo?.emails?.[0] ? `mailto:${contactInfo.emails[0]}` : 'mailto:office@akbardharmakarya.com' },
+    { icon: MapPin, title: 'Alamat', lines: contactInfo?.address?.split('\n') || ['Laguna Spring Hills B 03, Condrowangsan', 'Baturetno, Banguntapan, Bantul', 'DI Yogyakarta'], href: undefined },
   ]
 
   return (
@@ -126,11 +126,12 @@ export default function Contact() {
                     <select name="kebutuhan" value={formData.kebutuhan} onChange={handleChange} required
                       className="w-full px-4 py-3 theme-bg-input border theme-border rounded-xl theme-text-heading text-sm focus:border-[var(--accent)] focus:outline-none transition-all duration-300">
                       <option value="">Pilih Kebutuhan</option>
-                      <option value="General Kontraktor">General Kontraktor</option>
-                      <option value="Supplier Material">Supplier Material</option>
-                      <option value="Konsultan Design">Konsultan Design</option>
-                      <option value="Konstruksi Industri">Konstruksi Industri</option>
-                      <option value="Interior & Fit-out">Interior & Fit-out</option>
+                      <option value="Sistem Proteksi Katodik">Sistem Proteksi Katodik</option>
+                      <option value="Survey & Inspeksi Korosi">Survey & Inspeksi Korosi</option>
+                      <option value="Penyediaan Material CP">Penyediaan Material CP</option>
+                      <option value="Pekerjaan Bawah Air (Underwater Work)">Pekerjaan Bawah Air (Underwater Work)</option>
+                      <option value="Rehabilitasi & Perbaikan Pipa">Rehabilitasi & Perbaikan Pipa</option>
+                      <option value="Splash Zone Protection">Splash Zone Protection</option>
                       <option value="Lainnya">Lainnya</option>
                     </select>
                   </div>
