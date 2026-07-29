@@ -14,13 +14,13 @@ export const structure: StructureResolver = (S) =>
       S.listItem()
         .title('Tentang Perusahaan')
         .id('about-singleton')
-        .child(S.document().schemaType('about').documentId('about')),
+        .child(S.document().schemaType('about').documentId('about-singleton')),
       S.listItem()
         .title('Informasi Kontak')
         .id('contact-singleton')
-        .child(S.document().schemaType('contactInfo').documentId('contactInfo')),
+        .child(S.document().schemaType('contactInfo').documentId('contactInfo-singleton')),
       S.listItem()
         .title('Pengaturan Footer')
         .id('footer-singleton')
-        .child(S.document().schemaType('footer').documentId('footer')),
+        .child(S.document().schemaType('footer').documentId('footer-singleton')),
     ])
