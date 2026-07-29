@@ -36,7 +36,18 @@ export default function TrustBar() {
     const loadClients = async () => {
       try {
         const data = await fetchClients()
-        setClients(data && data.length > 0 ? data : defaultClients)
+        if (data && data.length > 0) {
+          const merged = data.map(client => {
+            const defaultMatch = defaultClients.find(d => d.name === client.name)
+            return {
+              ...client,
+              logoUrl: client.logo?.asset?.url || defaultMatch?.logoUrl
+            }
+          })
+          setClients(merged)
+        } else {
+          setClients(defaultClients)
+        }
       } catch {
         setClients(defaultClients)
       } finally {
