@@ -14,6 +14,7 @@ export interface Client {
   _id: string
   name: string
   logo?: ClientLogo
+  logoUrl?: string   // external fallback URL
   order?: number
 }
 

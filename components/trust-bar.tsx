@@ -4,16 +4,28 @@ import { useEffect, useState } from 'react'
 import { fetchClients, Client } from '@/lib/fetchClients'
 
 const defaultClients: Client[] = [
-  { _id: 'client-1', name: 'PT Pertamina (Persero)', order: 1 },
-  { _id: 'client-2', name: 'PT Perusahaan Gas Negara', order: 2 },
-  { _id: 'client-3', name: 'PT PLN (Persero)', order: 3 },
-  { _id: 'client-4', name: 'PT Pupuk Indonesia', order: 4 },
-  { _id: 'client-5', name: 'PT Wijaya Karya', order: 5 },
-  { _id: 'client-6', name: 'PT Adhi Karya', order: 6 },
-  { _id: 'client-7', name: 'PT Waskita Karya', order: 7 },
-  { _id: 'client-8', name: 'PT Hutama Karya', order: 8 },
-  { _id: 'client-9', name: 'PT Rekayasa Industri', order: 9 },
-  { _id: 'client-10', name: 'PT Elnusa Tbk', order: 10 }
+  { _id: 'c1',  name: 'PT Pertamina (Persero)',      order: 1,  logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Pertamina_Logo.svg/240px-Pertamina_Logo.svg.png' },
+  { _id: 'c2',  name: 'PT Perusahaan Gas Negara',    order: 2,  logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Perusahaan_Gas_Negara_logo.svg/240px-Perusahaan_Gas_Negara_logo.svg.png' },
+  { _id: 'c3',  name: 'PT PLN (Persero)',             order: 3,  logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/PT_PLN_%28Persero%29_logo.svg/240px-PT_PLN_%28Persero%29_logo.svg.png' },
+  { _id: 'c4',  name: 'PT Pupuk Indonesia',           order: 4,  logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Logo_Pupuk_Indonesia.svg/240px-Logo_Pupuk_Indonesia.svg.png' },
+  { _id: 'c5',  name: 'PT Wijaya Karya',              order: 5,  logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Wika-logo.svg/240px-Wika-logo.svg.png' },
+  { _id: 'c6',  name: 'PT Adhi Karya',                order: 6,  logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Adhi_Karya_logo.svg/240px-Adhi_Karya_logo.svg.png' },
+  { _id: 'c7',  name: 'PT Waskita Karya',             order: 7,  logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Waskita_karya_logo.svg/240px-Waskita_karya_logo.svg.png' },
+  { _id: 'c8',  name: 'PT Hutama Karya',              order: 8,  logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Hutama_Karya_logo.svg/240px-Hutama_Karya_logo.svg.png' },
+  { _id: 'c9',  name: 'PT Rekayasa Industri',         order: 9,  logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/3e/Rekind-logo.png' },
+  { _id: 'c10', name: 'PT Elnusa Tbk',                order: 10, logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Elnusa.svg/240px-Elnusa.svg.png' },
+]
+
+/** Inisial 1–2 karakter dari nama perusahaan */
+function getInitials(name: string): string {
+  const words = name.replace(/^(PT|CV|UD|tbk|Persero)/gi, '').trim().split(/\s+/)
+  return words.slice(0, 2).map(w => w[0]?.toUpperCase() ?? '').join('')
+}
+
+/** Warna bg unik per klien */
+const BADGE_COLORS = [
+  '#1a4d8f','#b71c1c','#1b5e20','#4a148c','#e65100',
+  '#006064','#880e4f','#0d47a1','#33691e','#bf360c',
 ]
 
 export default function TrustBar() {
@@ -24,12 +36,8 @@ export default function TrustBar() {
     const loadClients = async () => {
       try {
         const data = await fetchClients()
-        if (data && data.length > 0) {
-          setClients(data)
-        } else {
-          setClients(defaultClients)
-        }
-      } catch (error) {
+        setClients(data && data.length > 0 ? data : defaultClients)
+      } catch {
         setClients(defaultClients)
       } finally {
         setIsLoaded(true)
@@ -40,24 +48,15 @@ export default function TrustBar() {
 
   if (!isLoaded || clients.length === 0) return null
 
-  const count = clients.length
-
-  /**
-   * SMART DUPLICATION
-   * - 1 logo  → ulang 15× agar track selalu memenuhi layar
-   * - Banyak logo → ulang minimal agar total ≥ 12 slot, loop mulus
-   * Track dirender DUA kali (A + A) → animasi -50% = seamless infinite scroll
-   */
   const minSlots = 12
-  const repeatCount = Math.max(2, Math.ceil(minSlots / count))
+  const repeatCount = Math.max(2, Math.ceil(minSlots / clients.length))
   const trackItems: Client[] = Array.from({ length: repeatCount }, () => clients).flat()
   const loopItems = [...trackItems, ...trackItems]
-
-  // Kecepatan: minimal 40s, tiap logo tambah 6s → pelan & nyaman dilihat
-  const animDuration = Math.max(40, count * 6)
+  const animDuration = Math.max(40, clients.length * 6)
 
   return (
-    <section className="section-base relative w-full py-20 border-y theme-border-subtle overflow-hidden snap-center snap-always"
+    <section
+      className="section-base relative w-full py-20 border-y theme-border-subtle overflow-hidden snap-center snap-always"
       style={{ background: 'var(--bg-secondary, #0f172a)' }}
     >
       <style>{`
@@ -73,19 +72,19 @@ export default function TrustBar() {
           animation: trust-scroll ${animDuration}s linear infinite;
           will-change: transform;
         }
-        .trust-track:hover {
-          animation-play-state: paused;
-        }
+        .trust-track:hover { animation-play-state: paused; }
         .trust-logo-card {
           flex-shrink: 0;
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: clamp(0.6rem, 1.5vw, 1rem) clamp(1rem, 2.5vw, 2rem);
+          padding: clamp(0.6rem, 1.5vw, 1rem) clamp(1.2rem, 2.5vw, 2.2rem);
           background: rgba(255,255,255,0.06);
           border: 1px solid rgba(255,255,255,0.12);
-          border-radius: 12px;
-          transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+          border-radius: 14px;
+          min-width: 120px;
+          min-height: 70px;
+          transition: background .35s ease, border-color .35s ease, transform .35s ease, box-shadow .35s ease;
           cursor: default;
         }
         .trust-logo-card:hover {
@@ -95,26 +94,27 @@ export default function TrustBar() {
           box-shadow: 0 8px 30px rgba(0,0,0,0.35);
         }
         .trust-logo-img {
-          height: clamp(36px, 5vw, 60px);
+          height: clamp(38px, 5vw, 56px);
           width: auto;
+          max-width: 140px;
           object-fit: contain;
-          opacity: 0.85;
-          transition: opacity 0.35s ease;
+          filter: brightness(0) invert(1);
+          opacity: 0.82;
+          transition: opacity .35s ease;
           display: block;
         }
-        .trust-logo-card:hover .trust-logo-img {
-          opacity: 1;
-        }
-        .trust-logo-text {
-          font-size: clamp(0.75rem, 1.2vw, 1rem);
-          font-weight: 700;
-          letter-spacing: 0.1em;
-          white-space: nowrap;
-          color: rgba(255,255,255,0.65);
-          transition: color 0.35s ease;
-        }
-        .trust-logo-card:hover .trust-logo-text {
-          color: rgba(255,255,255,1);
+        .trust-logo-card:hover .trust-logo-img { opacity: 1; }
+        .trust-initials-badge {
+          width: 54px;
+          height: 54px;
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.1rem;
+          font-weight: 800;
+          color: #fff;
+          letter-spacing: 0.04em;
         }
         .trust-fade-left {
           position: absolute; left: 0; top: 0; bottom: 0;
@@ -134,10 +134,7 @@ export default function TrustBar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
         <div className="flex items-center gap-3">
           <div className="w-1 h-4 rounded-full" style={{ background: 'var(--gold, #c9a84c)' }} />
-          <p
-            className="text-[10px] sm:text-xs font-bold tracking-[0.25em] uppercase"
-            style={{ color: 'var(--gold, #c9a84c)' }}
-          >
+          <p className="text-[10px] sm:text-xs font-bold tracking-[0.25em] uppercase" style={{ color: 'var(--gold, #c9a84c)' }}>
             DIPERCAYA OLEH
           </p>
         </div>
@@ -147,32 +144,37 @@ export default function TrustBar() {
       <div className="relative">
         <div className="trust-fade-left" />
         <div className="trust-fade-right" />
-
         <div className="overflow-hidden py-2">
           <div className="trust-track">
-            {loopItems.map((client, i) => (
-              <div key={i} className="trust-logo-card">
-                {client.logo?.asset?.url ? (
-                  <img
-                    src={client.logo.asset.url}
-                    alt={client.name}
-                    className="trust-logo-img"
-                    draggable={false}
-                    onError={(e) => {
-                      // Fallback ke nama jika gambar gagal load
-                      const target = e.currentTarget as HTMLImageElement
-                      target.style.display = 'none'
-                      const span = document.createElement('span')
-                      span.className = 'trust-logo-text'
-                      span.textContent = client.name
-                      target.parentNode?.appendChild(span)
-                    }}
-                  />
-                ) : (
-                  <span className="trust-logo-text">{client.name}</span>
-                )}
-              </div>
-            ))}
+            {loopItems.map((client, i) => {
+              const logoSrc = client.logo?.asset?.url ?? client.logoUrl
+              const badgeColor = BADGE_COLORS[(i / 2 | 0) % BADGE_COLORS.length]
+              return (
+                <div key={i} className="trust-logo-card">
+                  {logoSrc ? (
+                    <img
+                      src={logoSrc}
+                      alt={client.name}
+                      className="trust-logo-img"
+                      draggable={false}
+                      onError={(e) => {
+                        const img = e.currentTarget as HTMLImageElement
+                        img.style.display = 'none'
+                        const badge = document.createElement('div')
+                        badge.className = 'trust-initials-badge'
+                        badge.style.background = badgeColor
+                        badge.textContent = getInitials(client.name)
+                        img.parentNode?.appendChild(badge)
+                      }}
+                    />
+                  ) : (
+                    <div className="trust-initials-badge" style={{ background: badgeColor }}>
+                      {getInitials(client.name)}
+                    </div>
+                  )}
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>
