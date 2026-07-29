@@ -114,12 +114,13 @@ export default function TrustBar() {
           width: auto;
           max-width: 140px;
           object-fit: contain;
-          filter: brightness(0) invert(1);
-          opacity: 0.82;
-          transition: opacity .35s ease;
+          filter: grayscale(100%) opacity(0.7);
+          transition: filter .35s ease, opacity .35s ease, transform .35s ease;
           display: block;
         }
-        .trust-logo-card:hover .trust-logo-img { opacity: 1; }
+        .trust-logo-card:hover .trust-logo-img { 
+          filter: grayscale(0%) opacity(1); 
+        }
         .trust-initials-badge {
           width: 54px;
           height: 54px;
