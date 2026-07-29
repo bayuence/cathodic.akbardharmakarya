@@ -5,8 +5,7 @@ const client = sanity.createClient({
   apiVersion: '2024-01-01',
   useCdn: false
 });
-client.fetch(`*[_type == "heroSlide" && !(_id in path("drafts.**"))] | order(order asc) {
+client.fetch(`*[_type == "contactInfo" && !(_id in path("drafts.**"))][0] {
   _id,
-  title,
-  youtubeVideoId
+  "companyProfileUrl": companyProfile.asset->url
 }`).then(res => console.log(JSON.stringify(res, null, 2)));

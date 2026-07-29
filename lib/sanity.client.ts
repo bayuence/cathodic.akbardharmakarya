@@ -15,4 +15,5 @@ export const sanityClient = createClient({
   apiVersion,
   useCdn: false,
   token,
+  fetch: { cache: 'no-store' },
 })
