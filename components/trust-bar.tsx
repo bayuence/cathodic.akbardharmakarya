@@ -4,16 +4,16 @@ import { useEffect, useState } from 'react'
 import { fetchClients, Client } from '@/lib/fetchClients'
 
 const defaultClients: Client[] = [
-  { _id: 'c1',  name: 'PT Pertamina (Persero)',      order: 1,  logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Pertamina_Logo.svg/240px-Pertamina_Logo.svg.png' },
-  { _id: 'c2',  name: 'PT Perusahaan Gas Negara',    order: 2,  logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Perusahaan_Gas_Negara_logo.svg/240px-Perusahaan_Gas_Negara_logo.svg.png' },
-  { _id: 'c3',  name: 'PT PLN (Persero)',             order: 3,  logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/PT_PLN_%28Persero%29_logo.svg/240px-PT_PLN_%28Persero%29_logo.svg.png' },
-  { _id: 'c4',  name: 'PT Pupuk Indonesia',           order: 4,  logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Logo_Pupuk_Indonesia.svg/240px-Logo_Pupuk_Indonesia.svg.png' },
-  { _id: 'c5',  name: 'PT Wijaya Karya',              order: 5,  logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Wika-logo.svg/240px-Wika-logo.svg.png' },
-  { _id: 'c6',  name: 'PT Adhi Karya',                order: 6,  logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Adhi_Karya_logo.svg/240px-Adhi_Karya_logo.svg.png' },
-  { _id: 'c7',  name: 'PT Waskita Karya',             order: 7,  logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Waskita_karya_logo.svg/240px-Waskita_karya_logo.svg.png' },
-  { _id: 'c8',  name: 'PT Hutama Karya',              order: 8,  logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Hutama_Karya_logo.svg/240px-Hutama_Karya_logo.svg.png' },
-  { _id: 'c9',  name: 'PT Rekayasa Industri',         order: 9,  logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/3e/Rekind-logo.png' },
-  { _id: 'c10', name: 'PT Elnusa Tbk',                order: 10, logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Elnusa.svg/240px-Elnusa.svg.png' },
+  { _id: 'c1',  name: 'PT Pertamina (Persero)',      order: 1 },
+  { _id: 'c2',  name: 'PT Perusahaan Gas Negara',    order: 2 },
+  { _id: 'c3',  name: 'PT PLN (Persero)',             order: 3 },
+  { _id: 'c4',  name: 'PT Pupuk Indonesia',           order: 4 },
+  { _id: 'c5',  name: 'PT Wijaya Karya',              order: 5 },
+  { _id: 'c6',  name: 'PT Adhi Karya',                order: 6 },
+  { _id: 'c7',  name: 'PT Waskita Karya',             order: 7 },
+  { _id: 'c8',  name: 'PT Hutama Karya',              order: 8 },
+  { _id: 'c9',  name: 'PT Rekayasa Industri',         order: 9 },
+  { _id: 'c10', name: 'PT Elnusa Tbk',                order: 10 },
 ]
 
 function getInitials(name: string): string {
