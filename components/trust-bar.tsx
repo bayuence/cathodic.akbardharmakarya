@@ -16,9 +16,14 @@ const defaultClients: Client[] = [
   { _id: 'c10', name: 'PT Elnusa Tbk',                order: 10, logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Elnusa.svg/240px-Elnusa.svg.png' },
 ]
 
-/** Inisial 1–2 karakter dari nama perusahaan */
 function getInitials(name: string): string {
-  const words = name.replace(/^(PT|CV|UD|tbk|Persero)/gi, '').trim().split(/\s+/)
+  const cleaned = name
+    .replace(/^(PT\.|PT|CV\.|CV|UD\.|UD)/gi, '')
+    .replace(/\(Persero\)/gi, '')
+    .replace(/Tbk\.?/gi, '')
+    .replace(/[^a-zA-Z\s]/g, '')
+    .trim()
+  const words = cleaned.split(/\s+/).filter(Boolean)
   return words.slice(0, 2).map(w => w[0]?.toUpperCase() ?? '').join('')
 }
 
