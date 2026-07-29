@@ -1,4 +1,5 @@
-﻿export const dynamic = 'force-dynamic'
+﻿export const revalidate = 0
+export const dynamic = 'force-dynamic'
 import { sanityClient } from '@/lib/sanity.client'
 import { footerQuery } from '@/lib/sanity.queries'
 

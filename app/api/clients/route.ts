@@ -1,3 +1,4 @@
+﻿export const revalidate = 0
 export const dynamic = 'force-dynamic'
 
 import { sanityClient } from '@/lib/sanity.client'
@@ -8,6 +9,6 @@ export async function GET() {
     const clients = await sanityClient.fetch(clientsQuery)
     return Response.json(clients || [])
   } catch (error) {
-    return Response.json([])
+    console.error(error); return Response.json([]);
   }
 }
