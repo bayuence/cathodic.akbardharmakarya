@@ -21,7 +21,7 @@ export default defineType({
       name: 'description',
       title: 'Deskripsi',
       type: 'text',
-      initialValue: 'CV Akbar Dharma Karya merupakan perusahaan yang bergerak di bidang Cathodic Protection dan Corrosion Control, dengan layanan pendukung meliputi Survey, Inspection & Testing, Instalasi, serta Maintenance. Kami hadir untuk memberikan solusi profesional dalam menjaga integritas, keandalan, dan keberlangsungan operasional berbagai aset dan infrastruktur pada berbagai sektor industri.'
+      initialValue: 'Cathodic Akbar Dharma Karya merupakan perusahaan spesialis yang bergerak di bidang Cathodic Protection dan Corrosion Control, dengan layanan pendukung meliputi Survey, Inspection & Testing, Instalasi, serta Maintenance. Kami hadir untuk memberikan solusi profesional dalam menjaga integritas, keandalan, dan keberlangsungan operasional berbagai aset dan infrastruktur pada berbagai sektor industri.'
     }),
     defineField({
       name: 'stats',

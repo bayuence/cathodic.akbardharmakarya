@@ -5,7 +5,7 @@ export const runtime = 'edge'
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
-  const title = searchParams.get('title') || 'CV Akbar Dharma Karya'
+  const title = searchParams.get('title') || 'Cathodic Akbar Dharma Karya'
   const description = searchParams.get('desc') || 'Cathodic Protection & Corrosion Control Specialist Indonesia'
 
   return new ImageResponse(
@@ -86,7 +86,7 @@ export async function GET(request: NextRequest) {
               textTransform: 'uppercase',
             }}
           >
-            CV AKBAR DHARMA KARYA
+            CATHODIC AKBAR DHARMA KARYA
           </span>
         </div>
 

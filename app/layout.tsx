@@ -15,12 +15,14 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL('https://cathodic.akbardharmakarya.com'),
   title: {
-    default: 'CV Akbar Dharma Karya — Cathodic Protection & Corrosion Control',
-    template: '%s | CV Akbar Dharma Karya',
+    default: 'Cathodic Akbar Dharma Karya — Cathodic Protection & Corrosion Control',
+    template: '%s | Cathodic Akbar Dharma Karya',
   },
   description:
-    'CV Akbar Dharma Karya adalah perusahaan profesional di bidang Cathodic Protection, Corrosion Control, Survey, Inspection & Testing, Instalasi, dan Maintenance. Mitra terpercaya untuk perlindungan aset dan infrastruktur berbagai sektor industri.',
+    'Cathodic Akbar Dharma Karya adalah spesialis profesional di bidang Cathodic Protection, Corrosion Control, Survey, Inspection & Testing, Instalasi, dan Maintenance. Mitra terpercaya untuk perlindungan aset dan infrastruktur berbagai sektor industri.',
   keywords: [
+    'Cathodic Akbar Dharma Karya',
+    'ADK Cathodic',
     'CV Akbar Dharma Karya',
     'Akbar Dharma Karya',
     'akbardharmakarya',
@@ -42,9 +44,9 @@ export const metadata: Metadata = {
     'corrosion control migas',
     'perlindungan infrastruktur logam',
   ],
-  authors: [{ name: 'CV Akbar Dharma Karya' }],
-  creator: 'CV Akbar Dharma Karya',
-  publisher: 'CV Akbar Dharma Karya',
+  authors: [{ name: 'Cathodic Akbar Dharma Karya' }],
+  creator: 'Cathodic Akbar Dharma Karya',
+  publisher: 'Cathodic Akbar Dharma Karya',
   robots: {
     index: true,
     follow: true,
@@ -69,28 +71,28 @@ export const metadata: Metadata = {
     google: 'WtKorw8HaGA5-sokzd6o2nD0VUjWxeNU2yhDtecIZhg',
   },
   openGraph: {
-    title: 'CV Akbar Dharma Karya — Cathodic Protection & Corrosion Control',
+    title: 'Cathodic Akbar Dharma Karya — Cathodic Protection & Corrosion Control',
     description:
       'Solusi profesional Cathodic Protection dan Corrosion Control untuk industri migas, maritim, dan infrastruktur Indonesia.',
     url: 'https://cathodic.akbardharmakarya.com',
-    siteName: 'CV Akbar Dharma Karya',
+    siteName: 'Cathodic Akbar Dharma Karya',
     locale: 'id_ID',
     type: 'website',
     images: [
       {
-        url: '/api/og?title=CV+Akbar+Dharma+Karya&desc=Cathodic+Protection+%26+Corrosion+Control+Specialist+Indonesia',
+        url: '/api/og?title=Cathodic+Akbar+Dharma+Karya&desc=Cathodic+Protection+%26+Corrosion+Control+Specialist+Indonesia',
         width: 1200,
         height: 630,
-        alt: 'CV Akbar Dharma Karya — Cathodic Protection & Corrosion Control Indonesia',
+        alt: 'Cathodic Akbar Dharma Karya — Cathodic Protection & Corrosion Control Indonesia',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'CV Akbar Dharma Karya — Cathodic Protection & Corrosion Control',
+    title: 'Cathodic Akbar Dharma Karya — Cathodic Protection & Corrosion Control',
     description:
       'Solusi profesional Cathodic Protection dan Corrosion Control untuk berbagai sektor industri Indonesia.',
-    images: ['/api/og?title=CV+Akbar+Dharma+Karya&desc=Cathodic+Protection+%26+Corrosion+Control'],
+    images: ['/api/og?title=Cathodic+Akbar+Dharma+Karya&desc=Cathodic+Protection+%26+Corrosion+Control'],
   },
 }
 
@@ -103,8 +105,8 @@ export const metadata: Metadata = {
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'CV Akbar Dharma Karya',
-  alternateName: ['Akbar Dharma Karya', 'ADK Cathodic'],
+  name: 'Cathodic Akbar Dharma Karya',
+  alternateName: ['Cathodic Akbar Dharma Karya', 'ADK Cathodic', 'Akbar Dharma Karya'],
   url: 'https://cathodic.akbardharmakarya.com',
   logo: {
     '@type': 'ImageObject',
@@ -113,7 +115,7 @@ const organizationSchema = {
     height: 512,
   },
   description:
-    'CV Akbar Dharma Karya adalah perusahaan profesional di bidang Cathodic Protection, Corrosion Control, Survey, Inspection & Testing, Instalasi, dan Maintenance untuk berbagai sektor industri.',
+    'Cathodic Akbar Dharma Karya adalah spesialis profesional di bidang Cathodic Protection, Corrosion Control, Survey, Inspection & Testing, Instalasi, dan Maintenance untuk berbagai sektor industri.',
   foundingCountry: 'ID',
   address: {
     '@type': 'PostalAddress',
@@ -157,13 +159,13 @@ const organizationSchema = {
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'CV Akbar Dharma Karya',
+  name: 'Cathodic Akbar Dharma Karya',
   url: 'https://cathodic.akbardharmakarya.com',
-  description: 'Website resmi CV Akbar Dharma Karya — Cathodic Protection & Corrosion Control Indonesia',
+  description: 'Website resmi Cathodic Akbar Dharma Karya — Cathodic Protection & Corrosion Control Indonesia',
   inLanguage: 'id-ID',
   publisher: {
     '@type': 'Organization',
-    name: 'CV Akbar Dharma Karya',
+    name: 'Cathodic Akbar Dharma Karya',
     logo: {
       '@type': 'ImageObject',
       url: 'https://cathodic.akbardharmakarya.com/logo.png',
@@ -195,13 +197,13 @@ const breadcrumbSchema = {
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
-  name: 'CV Akbar Dharma Karya',
+  name: 'Cathodic Akbar Dharma Karya',
   image: 'https://cathodic.akbardharmakarya.com/logo.png',
   url: 'https://cathodic.akbardharmakarya.com',
   telephone: '+62813-9078-8045',
   email: 'office@akbardharmakarya.com',
   description:
-    'Perusahaan profesional di bidang Cathodic Protection, Corrosion Control, Survey, Inspection & Testing, Instalasi, dan Maintenance untuk berbagai sektor industri.',
+    'Spesialis profesional di bidang Cathodic Protection, Corrosion Control, Survey, Inspection & Testing, Instalasi, dan Maintenance untuk berbagai sektor industri.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Laguna Spring Hills B 03, Condrowangsan, Baturetno',
@@ -213,7 +215,7 @@ const localBusinessSchema = {
   areaServed: 'Indonesia',
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'Layanan CV Akbar Dharma Karya',
+    name: 'Layanan Cathodic Akbar Dharma Karya',
     itemListElement: [
       {
         '@type': 'Offer',
@@ -249,6 +251,48 @@ const localBusinessSchema = {
       },
     ],
   },
+}
+
+// 5. SiteNavigationElement Schema — Mendorong Google menampilkan Rich Sitelinks (seperti tampilan Pertamina)
+const siteNavigationSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'SiteNavigationElement',
+      position: 1,
+      name: 'Layanan Cathodic Protection',
+      description: 'Layanan instalasi Sacrificial Anode & Impressed Current Cathodic Protection (ICCP)',
+      url: 'https://cathodic.akbardharmakarya.com/#services',
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 2,
+      name: 'Survey & Inspeksi Korosi',
+      description: 'Survey CIPS, DCVG, PCM, Soil Resistivity, dan NDT Testing',
+      url: 'https://cathodic.akbardharmakarya.com/#services',
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 3,
+      name: 'Portofolio & Pengalaman Proyek',
+      description: 'Rekam jejak proyek Cathodic Protection di migas, maritim, dan infrastruktur',
+      url: 'https://cathodic.akbardharmakarya.com/#portfolio',
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 4,
+      name: 'Tentang Cathodic Akbar Dharma Karya',
+      description: 'Profil spesialis Cathodic Protection & Corrosion Control Indonesia',
+      url: 'https://cathodic.akbardharmakarya.com/#about',
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 5,
+      name: 'Kontak & Konsultasi',
+      description: 'Hubungi tim ahli Cathodic Akbar Dharma Karya',
+      url: 'https://cathodic.akbardharmakarya.com/#contact',
+    },
+  ],
 }
 
 export default function RootLayout({
@@ -288,6 +332,12 @@ export default function RootLayout({
           type="application/ld+json"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        <Script
+          id="schema-sitenavigation"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationSchema) }}
         />
       </body>
     </html>

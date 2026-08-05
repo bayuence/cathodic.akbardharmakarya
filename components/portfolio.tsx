@@ -199,7 +199,7 @@ export default function Portfolio() {
   const filtered = activeCategory === 'semua' ? projects : projects.filter((p) => p.category === activeCategory)
 
   return (
-    <section id="portfolio" className="section-base relative w-full theme-bg-secondary py-24 md:py-36 px-4 snap-start">
+    <section id="portfolio" className="section-base relative w-full theme-bg-secondary py-24 md:py-36 px-4">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--divider)] to-transparent" />
 
       <div className="max-w-7xl mx-auto relative z-10">

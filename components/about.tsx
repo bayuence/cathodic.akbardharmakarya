@@ -44,7 +44,7 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
 const defaultData: AboutData = {
   tagline: 'TENTANG PERUSAHAAN',
   title: 'Profesional Dalam Perlindungan, Andal Dalam Setiap Layanan',
-  description: 'CV Akbar Dharma Karya adalah perusahaan yang bergerak di bidang Cathodic Protection dan Corrosion Control, dengan layanan pendukung meliputi Survey, Inspection & Testing, Instalasi, serta Maintenance. Kami hadir untuk memberikan solusi profesional dalam menjaga integritas, keandalan, dan keberlangsungan operasional berbagai aset dan infrastruktur pada berbagai sektor industri.',
+  description: 'Cathodic Akbar Dharma Karya adalah spesialis profesional di bidang Cathodic Protection dan Corrosion Control, dengan layanan pendukung meliputi Survey, Inspection & Testing, Instalasi, serta Maintenance. Kami hadir untuk memberikan solusi profesional dalam menjaga integritas, keandalan, dan keberlangsungan operasional berbagai aset dan infrastruktur pada berbagai sektor industri.',
   stats: [
     { value: 50, label: 'Proyek Selesai', suffix: '+' },
     { value: 10, label: 'Klien Aktif', suffix: '+' },
@@ -75,7 +75,7 @@ export default function About() {
   }, [])
 
   return (
-    <section id="about" className="section-base relative w-full theme-bg-secondary py-24 md:py-36 px-4 snap-start">
+    <section id="about" className="section-base relative w-full theme-bg-secondary py-24 md:py-36 px-4">
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left Content */}

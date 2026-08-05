@@ -9,6 +9,7 @@
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "start:hosting": "node server.js",
+    "seed": "tsx scripts/seed.ts",
     "lint": "eslint ."
   },
   "engines": {

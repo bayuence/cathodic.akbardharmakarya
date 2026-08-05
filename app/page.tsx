@@ -11,26 +11,26 @@ import Footer from '@/components/footer'
 import FloatingElements from '@/components/floating-elements'
 
 export const metadata: Metadata = {
-  title: 'CV Akbar Dharma Karya — Cathodic Protection & Corrosion Control Indonesia',
+  title: 'Cathodic Akbar Dharma Karya — Cathodic Protection & Corrosion Control Indonesia',
   description:
-    'CV Akbar Dharma Karya adalah perusahaan profesional di bidang Cathodic Protection, Corrosion Control, Survey, Inspection & Testing, Instalasi, dan Maintenance. Mitra terpercaya untuk perlindungan aset dan infrastruktur industri.',
+    'Cathodic Akbar Dharma Karya adalah spesialis profesional di bidang Cathodic Protection, Corrosion Control, Survey, Inspection & Testing, Instalasi, dan Maintenance. Mitra terpercaya untuk perlindungan aset dan infrastruktur industri.',
   alternates: {
     canonical: 'https://cathodic.akbardharmakarya.com',
   },
   openGraph: {
-    title: 'CV Akbar Dharma Karya — Cathodic Protection & Corrosion Control',
+    title: 'Cathodic Akbar Dharma Karya — Cathodic Protection & Corrosion Control',
     description:
       'Solusi profesional Cathodic Protection dan Corrosion Control untuk industri migas, maritim, dan infrastruktur Indonesia.',
     url: 'https://cathodic.akbardharmakarya.com',
-    siteName: 'CV Akbar Dharma Karya',
+    siteName: 'Cathodic Akbar Dharma Karya',
     locale: 'id_ID',
     type: 'website',
     images: [
       {
-        url: '/api/og?title=CV+Akbar+Dharma+Karya&desc=Cathodic+Protection+%26+Corrosion+Control+Specialist+Indonesia',
+        url: '/api/og?title=Cathodic+Akbar+Dharma+Karya&desc=Cathodic+Protection+%26+Corrosion+Control+Specialist+Indonesia',
         width: 1200,
         height: 630,
-        alt: 'CV Akbar Dharma Karya — Cathodic Protection & Corrosion Control Indonesia',
+        alt: 'Cathodic Akbar Dharma Karya — Cathodic Protection & Corrosion Control Indonesia',
       },
     ],
   },

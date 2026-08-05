@@ -25,7 +25,7 @@ export default function Hero() {
           setSlides([
             {
               _id: 'fallback-slide-1',
-              tag: 'CV AKBAR DHARMA KARYA',
+              tag: 'CATHODIC AKBAR DHARMA KARYA',
               title: 'Cathodic Protection Specialist',
               subtitle: 'Solusi profesional dalam menjaga integritas, keandalan, dan keberlangsungan operasional aset industri Anda dari korosi.',
               youtubeVideoId: 'dQw4w9WgXcQ',
@@ -85,7 +85,7 @@ export default function Hero() {
   }, [isMuted])
 
   return (
-    <section id="hero" className="relative w-full h-screen overflow-hidden theme-bg-primary snap-start">
+    <section id="hero" className="relative w-full h-screen overflow-hidden theme-bg-primary">
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/50 z-50">
           <div className="text-white">Loading slides...</div>

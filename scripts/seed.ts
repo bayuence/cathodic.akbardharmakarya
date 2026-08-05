@@ -83,7 +83,7 @@ const about = {
   tagline: 'TENTANG PERUSAHAAN',
   title: 'Profesional Dalam Perlindungan, Andal Dalam Setiap Layanan',
   description:
-    'CV Akbar Dharma Karya merupakan perusahaan yang bergerak di bidang Cathodic Protection dan Corrosion Control, dengan layanan pendukung meliputi Survey, Inspection & Testing, Instalasi, serta Maintenance. Kami hadir untuk memberikan solusi profesional dalam menjaga integritas, keandalan, dan keberlangsungan operasional berbagai aset dan infrastruktur pada berbagai sektor industri.\n\nDengan dukungan sumber daya manusia yang kompeten dan kemampuan teknis yang mumpuni, CV Akbar Dharma Karya berkomitmen untuk menjadi mitra kerja yang dapat diandalkan dalam mendukung kebutuhan pelanggan — mengedepankan kualitas pekerjaan, keselamatan kerja, ketepatan waktu, integritas, serta kepuasan pelanggan.',
+    'Cathodic Akbar Dharma Karya merupakan perusahaan spesialis yang bergerak di bidang Cathodic Protection dan Corrosion Control, dengan layanan pendukung meliputi Survey, Inspection & Testing, Instalasi, serta Maintenance. Kami hadir untuk memberikan solusi profesional dalam menjaga integritas, keandalan, dan keberlangsungan operasional berbagai aset dan infrastruktur pada berbagai sektor industri.\n\nDengan dukungan sumber daya manusia yang kompeten dan kemampuan teknis yang mumpuni, Cathodic Akbar Dharma Karya berkomitmen untuk menjadi mitra kerja yang dapat diandalkan dalam mendukung kebutuhan pelanggan — mengedepankan kualitas pekerjaan, keselamatan kerja, ketepatan waktu, integritas, serta kepuasan pelanggan.',
   stats: [
     { _key: 's1', value: 50, suffix: '+', label: 'Proyek Selesai' },
     { _key: 's2', value: 15, suffix: '+', label: 'Klien Aktif' },
@@ -202,12 +202,65 @@ const contactInfo = {
 const footer = {
   _id: 'footer-singleton',
   _type: 'footer',
-  copyright: '© 2026 CV. Akbar Dharma Karya. All rights reserved.',
+  copyright: '© 2026 Cathodic Akbar Dharma Karya. All rights reserved.',
   footerInfo: 'Cathodic Protection & Corrosion Control · Bantul, DI Yogyakarta',
   socials: {
     instagram: 'https://www.instagram.com/akbardharmakarya',
   },
 }
+
+const portfolios = [
+  {
+    _id: 'portfolio-1',
+    _type: 'portfolio',
+    name: 'Survey CIPS & DCVG Pipeline Transmisi Gas 12"',
+    category: 'pipeline',
+    client: 'PT Perusahaan Gas Negara',
+    location: 'Sumatera Selatan - Jawa Barat',
+    year: 2025,
+    description: 'Pemeriksaan integritas dan proteksi katodik pipa baja transmisi gas bumi sepanjang 45 km menggunakan metode Close Interval Potential Survey (CIPS) dan Direct Current Voltage Gradient (DCVG).',
+  },
+  {
+    _id: 'portfolio-2',
+    _type: 'portfolio',
+    name: 'Instalasi ICCP & Anoda Korban Jetty Pelabuhan',
+    category: 'marine',
+    client: 'PT Pertamina (Persero)',
+    location: 'Cilacap, Jawa Tengah',
+    year: 2025,
+    description: 'Pekerjaan rancang bangun, suplai material, instalasi, dan commissioning Impressed Current Cathodic Protection (ICCP) serta anoda korban aluminium pada tiang pancang baja dermaga.',
+  },
+  {
+    _id: 'portfolio-3',
+    _type: 'portfolio',
+    name: 'Sistem Proteksi Katodik Internal Tangki BBM 5000 KL',
+    category: 'tank',
+    client: 'PT Pertamina Patra Niaga',
+    location: 'Surabaya, Jawa Timur',
+    year: 2026,
+    description: 'Pemasangan anoda korban aluminium bersertifikasi untuk perlindungan karat bagian dalam (internal tank bottom) tangki penyimpanan BBM.',
+  },
+  {
+    _id: 'portfolio-4',
+    _type: 'portfolio',
+    name: 'Proteksi Katodik Struktur Beton Jembatan Maritim',
+    category: 'marine',
+    client: 'Kementerian PUPR',
+    location: 'Sulawesi Utara',
+    year: 2024,
+    description: 'Penerapan sistem proteksi katodik tipe anoda korban seng (zinc mesh) pada besi tulangan beton jembatan laut guna mencegah kerusakan akibat korosi klorida.',
+  },
+  {
+    _id: 'portfolio-5',
+    _type: 'portfolio',
+    name: 'Audit Sistem Proteksi Katodik Kilang LNG',
+    category: 'plant',
+    client: 'PT Badak NGL',
+    location: 'Bontang, Kalimantan Timur',
+    year: 2026,
+    description: 'Inspeksi, pengujian Soil Resistivity, pengukuran potensial proteksi katodik, dan penyusunan rekomendasi perbaikan sistem korosi area kilang pengolahan gas alam cair.',
+  },
+]
 
 // ─────────────────────────────────────────────
 // MAIN
@@ -225,6 +278,9 @@ async function main() {
 
   console.log('\n📌 Services...')
   for (const svc of services) await upsert(svc)
+
+  console.log('\n📌 Portfolios...')
+  for (const p of portfolios) await upsert(p)
 
   console.log('\n📌 Clients...')
   for (const c of clients) await upsert(c)

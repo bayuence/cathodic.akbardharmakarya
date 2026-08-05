@@ -74,20 +74,20 @@ export default function Footer() {
   })) || []
 
   return (
-    <footer className="relative w-full theme-bg-primary border-t border-[var(--divider)] px-4 snap-start">
+    <footer className="relative w-full theme-bg-primary border-t border-[var(--divider)] px-4">
       <div className="max-w-7xl mx-auto py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="space-y-5">
             <a href="#hero" className="flex items-center gap-3 group">
               <Image 
                 src="/logo.png" 
-                alt="CV. Akbar Dharma Karya Logo" 
+                alt="Cathodic Akbar Dharma Karya Logo" 
                 width={72} 
                 height={36} 
                 className="w-auto h-9 object-contain"
               />
               <div>
-                <p className="font-bold text-sm tracking-wide theme-text-heading">{footerData?.brandName || 'CV. AKBAR DHARMA KARYA'}</p>
+                <p className="font-bold text-sm tracking-wide theme-text-heading">{footerData?.brandName || 'CATHODIC AKBAR DHARMA KARYA'}</p>
                 <p className="theme-gold text-[10px] tracking-[0.12em]">{footerData?.tagline || 'Cathodic Protection & Corrosion Control'}</p>
               </div>
             </a>
@@ -128,7 +128,7 @@ export default function Footer() {
         <div className="h-px bg-[var(--divider)] mb-8" />
 
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.4 }} viewport={{ once: true }} className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="theme-text-muted text-xs text-center md:text-left">{footerData?.copyright || '© 2026 CV. Akbar Dharma Karya. All rights reserved.'}</p>
+          <p className="theme-text-muted text-xs text-center md:text-left">{footerData?.copyright || '© 2026 Cathodic Akbar Dharma Karya. All rights reserved.'}</p>
           <p className="theme-text-muted text-xs">
             {footerData?.footerInfo || 'Cathodic Protection & Corrosion Control · Bantul, DI Yogyakarta'}
           </p>

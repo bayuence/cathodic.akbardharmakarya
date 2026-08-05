@@ -39,15 +39,15 @@ export default function Navbar() {
             <a href="#hero" className="flex items-center gap-3 group">
               <Image
                 src="/logo.png"
-                alt="CV Akbar Dharma Karya Logo"
+                alt="Cathodic Akbar Dharma Karya Logo"
                 width={80}
                 height={40}
                 className="w-auto h-10 object-contain"
               />
               <div className="hidden sm:block">
-                {/* Judul CV */}
+                {/* Judul Site */}
                 <p className={`text-[13px] font-bold leading-tight tracking-wide transition-colors duration-300 ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
-                  CV. AKBAR DHARMA KARYA
+                  CATHODIC AKBAR DHARMA KARYA
                 </p>
                 <p className={`text-[10px] font-medium tracking-[0.15em] transition-colors duration-300 ${isScrolled ? 'text-amber-600' : 'text-amber-300'}`}>
                   Cathodic Protection & Corrosion Control
