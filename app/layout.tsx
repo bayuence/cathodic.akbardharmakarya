@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.png',
+        url: '/og-banner.png',
         width: 1200,
         height: 630,
         type: 'image/png',
@@ -97,7 +97,7 @@ export const metadata: Metadata = {
     title: 'Cathodic Akbar Dharma Karya — Cathodic Protection & Corrosion Control',
     description:
       'Solusi profesional Cathodic Protection dan Corrosion Control untuk berbagai sektor industri Indonesia.',
-    images: ['/og-image.png'],
+    images: ['/og-banner.png'],
   },
 }
 

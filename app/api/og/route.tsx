@@ -3,10 +3,31 @@ import { NextRequest } from 'next/server'
 
 export const runtime = 'edge'
 
+function arrayBufferToBase64(buffer: ArrayBuffer): string {
+  const bytes = new Uint8Array(buffer)
+  let binary = ''
+  for (let i = 0; i < bytes.byteLength; i++) {
+    binary += String.fromCharCode(bytes[i])
+  }
+  return btoa(binary)
+}
+
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
-  const title = searchParams.get('title') || 'Cathodic Akbar Dharma Karya'
-  const description = searchParams.get('desc') || 'Cathodic Protection & Corrosion Control Specialist Indonesia'
+  const title = searchParams.get('title') || 'CV. AKBAR DHARMA KARYA'
+  const description = searchParams.get('desc') || 'CATHODIC PROTECTION & CORROSION CONTROL'
+
+  let logoSrc: string | null = null
+  try {
+    const logoUrl = new URL('/logo.png', request.url)
+    const res = await fetch(logoUrl)
+    if (res.ok) {
+      const buf = await res.arrayBuffer()
+      logoSrc = `data:image/png;base64,${arrayBufferToBase64(buf)}`
+    }
+  } catch {
+    logoSrc = null
+  }
 
   return new ImageResponse(
     (
@@ -16,138 +37,87 @@ export async function GET(request: NextRequest) {
           height: '630px',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'flex-start',
+          alignItems: 'center',
           justifyContent: 'center',
-          background: 'linear-gradient(135deg, #060B18 0%, #0a1628 50%, #0d1f3c 100%)',
-          padding: '60px 80px',
-          fontFamily: 'system-ui, -apple-system, sans-serif',
+          background: 'linear-gradient(135deg, #F8FAFC 0%, #FFFFFF 50%, #F1F5F9 100%)',
           position: 'relative',
-          overflow: 'hidden',
+          fontFamily: 'system-ui, -apple-system, sans-serif',
         }}
       >
-        {/* Background decorative elements */}
-        <div
-          style={{
-            position: 'absolute',
-            top: '-100px',
-            right: '-100px',
-            width: '500px',
-            height: '500px',
-            borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(26,58,107,0.4) 0%, transparent 70%)',
-          }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            bottom: '-50px',
-            left: '600px',
-            width: '300px',
-            height: '300px',
-            borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(194,154,72,0.15) 0%, transparent 70%)',
-          }}
-        />
-
-        {/* Top accent line */}
+        {/* Top accent bar */}
         <div
           style={{
             position: 'absolute',
             top: '0',
             left: '0',
             right: '0',
-            height: '4px',
-            background: 'linear-gradient(90deg, #c29a48, #e8c97a, #c29a48)',
+            height: '12px',
+            background: 'linear-gradient(90deg, #1E3A7A 0%, #EA621F 50%, #C29A48 100%)',
           }}
         />
 
-        {/* Tag */}
+        {/* Bottom accent bar */}
         <div
           style={{
+            position: 'absolute',
+            bottom: '0',
+            left: '0',
+            right: '0',
+            height: '12px',
+            background: 'linear-gradient(90deg, #1E3A7A 0%, #EA621F 50%, #C29A48 100%)',
+          }}
+        />
+
+        {/* Centered column (fits cleanly inside 630x630 square center crop) */}
+        <div
+          style={{
+            width: '580px',
             display: 'flex',
+            flexDirection: 'column',
             alignItems: 'center',
-            gap: '10px',
-            marginBottom: '30px',
+            justifyContent: 'center',
           }}
         >
+          {logoSrc && (
+            <img
+              src={logoSrc}
+              width={340}
+              height={203}
+              alt="CV. Akbar Dharma Karya"
+              style={{
+                marginBottom: '28px',
+                objectFit: 'contain',
+              }}
+            />
+          )}
+
           <div
             style={{
-              width: '8px',
-              height: '8px',
-              background: '#c29a48',
-            }}
-          />
-          <span
-            style={{
-              color: '#c29a48',
-              fontSize: '14px',
-              fontWeight: 700,
-              letterSpacing: '0.25em',
-              textTransform: 'uppercase',
+              color: '#0F172A',
+              fontSize: '40px',
+              fontWeight: 800,
+              letterSpacing: '0.04em',
+              textAlign: 'center',
+              marginBottom: '12px',
             }}
           >
-            CATHODIC AKBAR DHARMA KARYA
-          </span>
-        </div>
-
-        {/* Title */}
-        <div
-          style={{
-            color: '#ffffff',
-            fontSize: '52px',
-            fontWeight: 800,
-            lineHeight: 1.1,
-            marginBottom: '24px',
-            maxWidth: '800px',
-          }}
-        >
-          {title}
-        </div>
-
-        {/* Description */}
-        <div
-          style={{
-            color: 'rgba(255,255,255,0.7)',
-            fontSize: '22px',
-            lineHeight: 1.5,
-            maxWidth: '700px',
-            marginBottom: '50px',
-          }}
-        >
-          {description}
-        </div>
-
-        {/* Bottom info */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '20px',
-          }}
-        >
-          <div
-            style={{
-              background: 'rgba(255,255,255,0.05)',
-              border: '1px solid rgba(194,154,72,0.3)',
-              borderRadius: '8px',
-              padding: '10px 20px',
-              color: 'rgba(255,255,255,0.6)',
-              fontSize: '14px',
-            }}
-          >
-            🌐 cathodic.akbardharmakarya.com
+            {title}
           </div>
+
           <div
             style={{
-              background: 'rgba(255,255,255,0.05)',
-              border: '1px solid rgba(255,255,255,0.1)',
-              borderRadius: '8px',
-              padding: '10px 20px',
-              color: 'rgba(255,255,255,0.6)',
-              fontSize: '14px',
+              color: '#EA621F',
+              fontSize: '21px',
+              fontWeight: 700,
+              letterSpacing: '0.08em',
+              textAlign: 'center',
+              background: 'rgba(234, 98, 31, 0.08)',
+              border: '2px solid rgba(234, 98, 31, 0.25)',
+              borderRadius: '999px',
+              padding: '8px 24px',
             }}
           >
-            📍 DI Yogyakarta, Indonesia
+            {description}
           </div>
         </div>
       </div>
