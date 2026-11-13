@@ -43,21 +43,17 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
 // Fallback data if Sanity is empty or fails
 const defaultData: AboutData = {
   tagline: 'TENTANG PERUSAHAAN',
-  title: 'Profesional Dalam Perlindungan, Andal Dalam Setiap Layanan',
-  description: 'Cathodic Akbar Dharma Karya adalah spesialis profesional di bidang Cathodic Protection dan Corrosion Control, dengan layanan pendukung meliputi Survey, Inspection & Testing, Instalasi, serta Maintenance. Kami hadir untuk memberikan solusi profesional dalam menjaga integritas, keandalan, dan keberlangsungan operasional berbagai aset dan infrastruktur pada berbagai sektor industri.',
-  stats: [
-    { value: 50, label: 'Proyek Selesai', suffix: '+' },
-    { value: 10, label: 'Klien Aktif', suffix: '+' },
-    { value: 5, label: 'Tahun Pengalaman', suffix: '+' },
-  ],
+  title: 'Profesional, Terpercaya, dan Bertanggung Jawab',
+  description: 'Akbar Dharma Karya merupakan perusahaan spesialis yang bergerak di bidang Cathodic Protection dan Corrosion Control, dengan layanan pendukung meliputi Survey, Inspection & Testing, Instalasi, serta Maintenance. Kami hadir untuk memberikan solusi profesional dalam menjaga integritas, keandalan, dan keberlangsungan operasional berbagai aset dan infrastruktur pada berbagai sektor industri. Dengan dukungan sumber daya manusia yang kompeten dan kemampuan teknis yang mumpuni, Akbar Dharma Karya berkomitmen untuk menjadi mitra kerja yang dapat diandalkan dalam mendukung kebutuhan pelanggan — mengedepankan kualitas pekerjaan, keselamatan kerja, ketepatan waktu, integritas, serta kepuasan pelanggan.',
+  stats: [],
   badges: [
     { name: 'NPWP', description: 'Wajib Pajak' },
     { name: 'NIB', description: 'Induk Berusaha' },
     { name: 'SPPKP', description: 'Pengusaha Kena Pajak' },
   ],
   videos: [
-    { title: 'Cathodic Protection Installation', location: 'Field Project', videoId: 'iGCH44aqfcE' },
-    { title: 'Corrosion Control Survey', location: 'Pipeline Site', videoId: 'MNg6fr2iKX0' }
+    { title: 'Cathodic Protection Installation Schematic', location: 'Schematic Animation', videoId: 'wn9HQV25b84' },
+    { title: 'Galvanic & Impressed Current CP System', location: 'Technical Principle', videoId: '4hBorIXTfWA' }
   ]
 }
 
@@ -99,8 +95,9 @@ export default function About() {
             </div>
 
             {/* Stats and Legal */}
-            <div className="space-y-16 pt-12 border-t border-[var(--divider)]">
+            <div className="space-y-10 pt-8 border-t border-[var(--divider)]">
               {/* Premium Executive Stats Row */}
+              {data.stats && data.stats.length > 0 && (
               <div className="flex flex-nowrap items-center justify-between no-scrollbar overflow-x-auto gap-4 sm:gap-0">
                 {data.stats.map((stat, i) => (
                   <motion.div 
@@ -129,6 +126,7 @@ export default function About() {
                   </motion.div>
                 ))}
               </div>
+              )}
 
               {/* Legal Badges */}
               <div className="relative">

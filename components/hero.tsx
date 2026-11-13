@@ -43,7 +43,7 @@ export default function Hero() {
               _id: 'fallback-slide-3',
               tag: 'ENGINEERING & MAINTENANCE',
               title: 'Instalasi & Pemeliharaan Aset',
-              subtitle: 'Dukungan tim ahli bersertifikasi untuk perancangan, pemasangan, commissioning, dan pemeliharaan berkala sistem proteksi katodik.',
+              subtitle: 'Dukungan tim ahli bersertifikasi untuk perencanaan, pemasangan, commissioning, dan pemeliharaan berkala sistem proteksi katodik.',
               youtubeVideoId: 'dQw4w9WgXcQ',
               duration: 10000
             }

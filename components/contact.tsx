@@ -76,9 +76,10 @@ export default function Contact() {
             </div>
 
             <motion.a 
-              href={contactInfo?.companyProfileUrl || '#'} 
-              target={contactInfo?.companyProfileUrl ? "_blank" : undefined}
-              rel={contactInfo?.companyProfileUrl ? "noopener noreferrer" : undefined}
+              href={contactInfo?.companyProfileUrl || '/final-compro-cathodic-adk.pdf'} 
+              download="Final Compro Cathodic ADK.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -5 }} 
               className="inline-flex items-center gap-3 px-7 py-3.5 bg-gradient-to-r from-[var(--gold)] to-[#D4B85C] text-[#060B18] font-bold rounded-xl hover:shadow-lg transition-all duration-300 text-sm btn-glow"
             >

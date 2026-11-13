@@ -82,14 +82,10 @@ const about = {
   _id: 'about-singleton',
   _type: 'about',
   tagline: 'TENTANG PERUSAHAAN',
-  title: 'Profesional Dalam Perlindungan, Andal Dalam Setiap Layanan',
+  title: 'Profesional, Terpercaya, dan Bertanggung Jawab',
   description:
-    'Cathodic Akbar Dharma Karya merupakan perusahaan spesialis yang bergerak di bidang Cathodic Protection dan Corrosion Control, dengan layanan pendukung meliputi Survey, Inspection & Testing, Instalasi, serta Maintenance. Kami hadir untuk memberikan solusi profesional dalam menjaga integritas, keandalan, dan keberlangsungan operasional berbagai aset dan infrastruktur pada berbagai sektor industri.\n\nDengan dukungan sumber daya manusia yang kompeten dan kemampuan teknis yang mumpuni, Cathodic Akbar Dharma Karya berkomitmen untuk menjadi mitra kerja yang dapat diandalkan dalam mendukung kebutuhan pelanggan — mengedepankan kualitas pekerjaan, keselamatan kerja, ketepatan waktu, integritas, serta kepuasan pelanggan.',
-  stats: [
-    { _key: 's1', value: 50, suffix: '+', label: 'Proyek Selesai' },
-    { _key: 's2', value: 15, suffix: '+', label: 'Klien Aktif' },
-    { _key: 's3', value: 7,  suffix: '+', label: 'Tahun Pengalaman' },
-  ],
+    'Akbar Dharma Karya merupakan perusahaan spesialis yang bergerak di bidang Cathodic Protection dan Corrosion Control, dengan layanan pendukung meliputi Survey, Inspection & Testing, Instalasi, serta Maintenance. Kami hadir untuk memberikan solusi profesional dalam menjaga integritas, keandalan, dan keberlangsungan operasional berbagai aset dan infrastruktur pada berbagai sektor industri.\n\nDengan dukungan sumber daya manusia yang kompeten dan kemampuan teknis yang mumpuni, Akbar Dharma Karya berkomitmen untuk menjadi mitra kerja yang dapat diandalkan dalam mendukung kebutuhan pelanggan — mengedepankan kualitas pekerjaan, keselamatan kerja, ketepatan waktu, integritas, serta kepuasan pelanggan.',
+  stats: [],
   badges: [
     { _key: 'b1', name: 'NPWP',  description: 'Wajib Pajak Terdaftar' },
     { _key: 'b2', name: 'NIB',   description: 'Nomor Induk Berusaha' },
@@ -97,8 +93,8 @@ const about = {
     { _key: 'b4', name: 'AHU',   description: 'Kemenkumham Terdaftar' },
   ],
   videos: [
-    { _key: 'v1', title: 'Cathodic Protection Installation', location: 'Field Project, Indonesia', videoId: 'iGCH44aqfcE' },
-    { _key: 'v2', title: 'Corrosion Control Survey',         location: 'Pipeline Site, Indonesia', videoId: 'MNg6fr2iKX0' },
+    { _key: 'v1', title: 'Cathodic Protection Installation Schematic', location: 'Schematic Animation', videoId: 'wn9HQV25b84' },
+    { _key: 'v2', title: 'Galvanic & Impressed Current CP System',     location: 'Technical Principle', videoId: '4hBorIXTfWA' },
   ],
 }
 
@@ -106,7 +102,7 @@ const services = [
   {
     _id: 'service-1', _type: 'service', order: 1,
     title: 'Cathodic Protection System',
-    description: 'Perancangan dan instalasi sistem cathodic protection menggunakan metode Sacrificial Anode (Mg, Zn, Al) maupun Impressed Current (ICCP) untuk melindungi struktur logam terpendam maupun yang terendam air laut.',
+    description: 'Perencanaan dan instalasi sistem cathodic protection menggunakan metode Sacrificial Anode (Mg, Zn, Al) maupun Impressed Current (ICCP) untuk melindungi struktur logam terpendam maupun yang terendam air laut.',
     icon: 'Shield',
   },
   {
@@ -136,7 +132,7 @@ const services = [
   {
     _id: 'service-6', _type: 'service', order: 6,
     title: 'Pipe Repair & Maintenance',
-    description: 'Perbaikan dan pemeliharaan pipa, termasuk penggantian coating, pengisian cacat, penanganan korosi aktif, dan perawatan berkala sistem proteksi katodik untuk menjaga keandalan aset jangka panjang.',
+    description: 'Perbaikan dan pemeliharaan pipa, termasuk penggantian coating, penanganan korosi aktif, dan perawatan berkala sistem proteksi katodik untuk menjaga keandalan aset jangka panjang.',
     icon: 'Wrench',
   },
 ]

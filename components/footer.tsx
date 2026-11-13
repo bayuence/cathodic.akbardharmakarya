@@ -31,15 +31,21 @@ export default function Footer() {
     loadData()
   }, [])
 
+  const defaultQuickLinks = [
+    { label: 'Tentang Kami', href: '#about' },
+    { label: 'Layanan', href: '#services' },
+    { label: 'Kontak', href: '#contact' },
+    { label: 'Karir', href: '#' },
+  ]
+
+  const quickLinks = (footerData?.quickLinks || defaultQuickLinks).filter(
+    link => !link.href.includes('portfolio') && !link.href.includes('clients') && link.label.toLowerCase() !== 'portofolio' && link.label.toLowerCase() !== 'klien'
+  )
+
   const footerSections = [
     { 
       title: 'Perusahaan', 
-      links: footerData?.quickLinks || [
-        { label: 'Tentang Kami', href: '#about' },
-        { label: 'Portofolio', href: '#portfolio' },
-        { label: 'Klien', href: '#clients' },
-        { label: 'Karir', href: '#' },
-      ]
+      links: quickLinks
     },
     { 
       title: 'Layanan', 

@@ -9,43 +9,43 @@ const defaultServices: Service[] = [
   {
     _id: 'service-1',
     title: 'Cathodic Protection System',
-    description: 'Penyediaan turn-key project untuk sistem proteksi katodik baik metode Sacrificial Anode (Anoda Korban) maupun Impressed Current Cathodic Protection (ICCP) pada pipeline, jetty, offshore platform, tangki, dan struktur beton.',
+    description: 'Perencanaan dan instalasi sistem cathodic protection menggunakan metode Sacrificial Anode (Mg, Zn, Al) maupun Impressed Current (ICCP) untuk melindungi struktur logam terpendam maupun yang terendam air laut.',
     icon: 'Shield',
     order: 1
   },
   {
     _id: 'service-2',
-    title: 'Indirect & Direct Assessment Survey',
-    description: 'Survey dan inspeksi korosi pada pipa bawah tanah dengan metode Pearson Survey, Close Interval Potential Survey (CIPS), Direct Current Voltage Gradient (DCVG), Pipeline Current Mapping (PCM), serta Soil Resistivity Survey.',
-    icon: 'Activity',
+    title: 'Survey & Inspection',
+    description: 'Layanan inspeksi komprehensif meliputi CIPS (Close Interval Potential Survey), DCVG, PCM, Soil Resistivity Survey untuk evaluasi efektivitas sistem proteksi katodik pada jaringan pipa dan infrastruktur.',
+    icon: 'ScanLine',
     order: 2
   },
   {
     _id: 'service-3',
-    title: 'Underwater & Marine Work Services',
-    description: 'Inspeksi, pengujian, instalasi anoda korban, dan pemeliharaan struktur bawah air dan maritim yang melibatkan tim penyelam profesional dan survey pipeline lepas pantai.',
-    icon: 'Anchor',
+    title: 'NDT & Testing',
+    description: 'Pengujian tidak merusak (Non-Destructive Testing) meliputi UT (Ultrasonic Testing) dan LRUT (Long Range Ultrasonic Testing) untuk deteksi korosi, cacat, dan penilaian integritas struktur logam.',
+    icon: 'Microscope',
     order: 3
   },
   {
     _id: 'service-4',
-    title: 'Pipeline Rehabilitation & Repair',
-    description: 'Layanan rehabilitasi coating pipa, perbaikan mekanis pipa yang terkorosi, wrapping, dan solusi restorasi integritas pipa transmisi migas maupun air.',
-    icon: 'Wrench',
+    title: 'Under Water Work',
+    description: 'Layanan pekerjaan bawah air meliputi inspeksi bawah air, pemasangan anode, pembersihan, dan perbaikan struktur bawah laut untuk fasilitas offshore, dermaga, dan infrastruktur kelautan.',
+    icon: 'Waves',
     order: 4
   },
   {
     _id: 'service-5',
-    title: 'Splash Zone Protection System',
-    description: 'Sistem perlindungan area pasang surut (splash zone) menggunakan HDPE outer cover dikombinasikan dengan STAC wrap/tape untuk mencegah korosi ekstrem akibat oksigen dan air laut.',
-    icon: 'Waves',
+    title: 'Offshore Pipeline Survey',
+    description: 'Survey dan inspeksi jalur pipa offshore termasuk penilaian kondisi coating, deteksi kebocoran, pengukuran potensial katodik, dan mapping jalur pipa bawah laut secara profesional.',
+    icon: 'GitBranch',
     order: 5
   },
   {
     _id: 'service-6',
-    title: 'Material Supply & Manufacturing',
-    description: 'Penyediaan dan pabrikasi material cathodic protection berkualitas tinggi termasuk anoda magnesium, anoda zinc, anoda aluminium, silicon iron anodes, kabel CP, transformer rectifier, dan insulating joints.',
-    icon: 'Layers',
+    title: 'Pipe Repair & Maintenance',
+    description: 'Perbaikan dan pemeliharaan pipa, termasuk penggantian coating, penanganan korosi aktif, dan perawatan berkala sistem proteksi katodik untuk menjaga keandalan aset jangka panjang.',
+    icon: 'Wrench',
     order: 6
   }
 ]

@@ -19,8 +19,6 @@ export default function Navbar() {
     { label: 'Beranda', href: '#hero' },
     { label: 'Tentang', href: '#about' },
     { label: 'Layanan', href: '#services' },
-    { label: 'Portofolio', href: '#portfolio' },
-    { label: 'Klien', href: '#clients' },
     { label: 'Kontak', href: '#contact' },
   ]
 

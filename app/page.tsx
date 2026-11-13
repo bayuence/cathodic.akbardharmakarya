@@ -42,11 +42,13 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <TrustBar />
+        {/* TrustBar dinonaktifkan sementara sesuai arahan client sampai ada kerjasama resmi */}
+        {/* <TrustBar /> */}
         <About />
         <Services />
-        <Portfolio />
-        <ClientsGrid />
+        {/* Portofolio dan Klien (grid) dinonaktifkan sementara sesuai arahan client */}
+        {/* <Portfolio /> */}
+        {/* <ClientsGrid /> */}
         <Contact />
         <Footer />
       </main>
