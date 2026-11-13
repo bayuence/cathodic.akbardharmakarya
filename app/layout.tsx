@@ -12,8 +12,12 @@ const plusJakarta = Plus_Jakarta_Sans({
   variable: '--font-sans',
 })
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` :
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://cathodic-akbardharmakarya.vercel.app'))
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://cathodic.akbardharmakarya.com'),
+  metadataBase: new URL(siteUrl),
   title: {
     default: 'Cathodic Akbar Dharma Karya — Cathodic Protection & Corrosion Control',
     template: '%s | Cathodic Akbar Dharma Karya',
@@ -59,7 +63,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://cathodic.akbardharmakarya.com',
+    canonical: siteUrl,
   },
   icons: {
     icon: '/favicon.ico',
@@ -74,15 +78,16 @@ export const metadata: Metadata = {
     title: 'Cathodic Akbar Dharma Karya — Cathodic Protection & Corrosion Control',
     description:
       'Solusi profesional Cathodic Protection dan Corrosion Control untuk industri migas, maritim, dan infrastruktur Indonesia.',
-    url: 'https://cathodic.akbardharmakarya.com',
+    url: siteUrl,
     siteName: 'Cathodic Akbar Dharma Karya',
     locale: 'id_ID',
     type: 'website',
     images: [
       {
-        url: '/api/og?title=Cathodic+Akbar+Dharma+Karya&desc=Cathodic+Protection+%26+Corrosion+Control+Specialist+Indonesia',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
+        type: 'image/png',
         alt: 'Cathodic Akbar Dharma Karya — Cathodic Protection & Corrosion Control Indonesia',
       },
     ],
@@ -92,7 +97,7 @@ export const metadata: Metadata = {
     title: 'Cathodic Akbar Dharma Karya — Cathodic Protection & Corrosion Control',
     description:
       'Solusi profesional Cathodic Protection dan Corrosion Control untuk berbagai sektor industri Indonesia.',
-    images: ['/api/og?title=Cathodic+Akbar+Dharma+Karya&desc=Cathodic+Protection+%26+Corrosion+Control'],
+    images: ['/og-image.png'],
   },
 }
 
