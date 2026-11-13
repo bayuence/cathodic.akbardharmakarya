@@ -84,20 +84,20 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-banner.png',
-        width: 1200,
-        height: 630,
+        url: '/og-logo-square.png',
+        width: 800,
+        height: 800,
         type: 'image/png',
-        alt: 'Cathodic Akbar Dharma Karya — Cathodic Protection & Corrosion Control Indonesia',
+        alt: 'CV. Akbar Dharma Karya — Cathodic Protection & Corrosion Control',
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'Cathodic Akbar Dharma Karya — Cathodic Protection & Corrosion Control',
     description:
       'Solusi profesional Cathodic Protection dan Corrosion Control untuk berbagai sektor industri Indonesia.',
-    images: ['/og-banner.png'],
+    images: ['/og-logo-square.png'],
   },
 }
 
